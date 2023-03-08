@@ -1,0 +1,28 @@
+.siteImg {
+    height: 150px;
+    width: 210px;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.card {
+    margin-top: 20px;
+    width: 210px;
+}
+
+.card-title {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.card-text {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
