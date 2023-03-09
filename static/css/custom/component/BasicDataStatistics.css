@@ -1,0 +1,23 @@
+.bds_col_box {
+    border-right: 1px solid darkgrey
+}
+
+.bds_col_img {
+    margin-top: 10px
+}
+
+.bds_title {
+    text-align: left
+}
+
+.bds_title p {
+    font-size: 15px
+}
+
+.bds_data {
+    text-align: left
+}
+
+.bds_hr_bottom {
+    margin-top: 15px
+}

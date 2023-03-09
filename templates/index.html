@@ -1,13 +1,46 @@
-{% extends 'component/layout.html' %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    {% block head %}
-        <title>首页</title>
-    {% endblock %}
-</head>
-<body>
-成功显示fff
-</body>
-</html>
+{% extends 'component/Layout.html' %}
+{% load static %}
+{% block head %}
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custom/index.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custom/component/BasicDataStatistics.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custom/component/FastEntrance.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custom/component/NewWarning.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custom/component/VisitedEnd.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custom/component/SystemManagement.css' %}"/>
+{% endblock %}
+
+{% block content %}
+
+    <div class="container text-center" style="margin-top: 80px">
+
+        <div class="row">
+            <div class="col-9">
+                <div style="padding: 20px;background-color: white">
+                    <!-- 轮播图 -->
+                    {% include "component/Slideshow.html" %}
+                    <!-- 基础数据统计 -->
+                    {% include "component/BasicDataStatistics.html" %}
+                    <!-- 师生在线分布 -->
+                    {% include "component/TeacherStudentDistribution.html" %}
+                </div>
+            </div>
+
+            <div class="col-3">
+                <!-- 快捷入口 -->
+                {% include "component/FastEntrance.html" %}
+                <!-- 最新预警 -->
+                {% include "component/NewWarning.html" %}
+                <!-- 访问终端占比 -->
+                {% include "component/VisitedEnd.html" %}
+                <!-- 系统管理 -->
+                {% include "component/SystemManagement.html" %}
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+{% endblock %}
