@@ -20,4 +20,5 @@ from IndexPage import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', views.index),
+    path('learningstyle_style/', views.learningstyle_style),
 ]

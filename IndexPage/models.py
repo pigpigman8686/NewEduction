@@ -7,6 +7,12 @@
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
 
+class Type_Rate(models.Model):
+    dtype=models.CharField(max_length=255, blank=True, null=True)
+    rate = models.CharField(max_length=255, blank=True, null=True)
+
+
+
 
 class TStatActivityLog(models.Model):
     id = models.BigAutoField(primary_key=True)
@@ -27,6 +33,7 @@ class TStatActivityLog(models.Model):
     class Meta:
         managed = True
         db_table = 't_stat_activity_log'
+
 
 
 class TStatBbsLog(models.Model):
