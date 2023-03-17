@@ -3,38 +3,39 @@
 {% block head %}
     <title>首页</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/custom/index.css' %}"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/custom/component/BasicDataStatistics.css' %}"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/custom/component/FastEntrance.css' %}"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/custom/component/NewWarning.css' %}"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/custom/component/VisitedEnd.css' %}"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/custom/component/SystemManagement.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custom/component/IndexPage/BasicDataStatistics.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custom/component/IndexPage/FastEntrance.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custom/component/IndexPage/NewWarning.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custom/component/IndexPage/VisitedEnd.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custom/component/IndexPage/SystemManagement.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custom/component/IndexPage/Slideshow.css' %}"/>
 {% endblock %}
 
 {% block content %}
 
-    <div class="container text-center" style="margin-top: 80px">
+    <div class="container-fluid text-center" style="margin-top: 80px">
 
         <div class="row">
-            <div class="col-9">
+            <div class="col-9 col-md">
                 <div id="left_body">
                     <!-- 轮播图 -->
-                    {% include "component/Slideshow.html" %}
+                    {% include "component/IndexPage/Slideshow.html" %}
                     <!-- 基础数据统计 -->
-                    {% include "component/BasicDataStatistics.html" %}
+                    {% include "component/IndexPage/BasicDataStatistics.html" %}
                     <!-- 师生在线分布 -->
-                    {% include "component/TeacherStudentDistribution.html" %}
+                    {% include "component/IndexPage/TeacherStudentDistribution.html" %}
                 </div>
             </div>
 
             <div class="col-3">
                 <!-- 快捷入口 -->
-                {% include "component/FastEntrance.html" %}
+                {% include "component/IndexPage/FastEntrance.html" %}
                 <!-- 最新预警 -->
-                {% include "component/NewWarning.html" %}
+                {% include "component/IndexPage/NewWarning.html" %}
                 <!-- 访问终端占比 -->
-                {% include "component/VisitedEnd.html" %}
+                {% include "component/IndexPage/VisitedEnd.html" %}
                 <!-- 系统管理 -->
-                {% include "component/SystemManagement.html" %}
+                {% include "component/IndexPage/SystemManagement.html" %}
             </div>
         </div>
     </div>

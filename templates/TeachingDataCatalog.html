@@ -1,0 +1,350 @@
+{% extends 'component/Layout.html' %}
+{% load static %}
+{% block head %}
+    <title>教学数据分类</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custom/component/TeachingDataCatalog.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-datetimepicker.min.css' %}"/>
+    <script src="{% static 'js/bootstrap-datetimepicker.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap-datetimepicker.zh-CN.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+
+    <div class="container-fluid" style="margin-top: 56px;">
+        <div class="row">
+            <!--侧边栏导航-->
+            <div class="col-2" style="background-color: white;padding-right: 10px">
+                <div class="flex-shrink-0 p-3 bg-white">
+                    <ul class="list-unstyled ps-0">
+                        <li class="mb-1">
+                            <button class="btn btn-toggle align-items-center rounded collapsed"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#home-collapse" aria-expanded="true">
+                                教学资源数据
+                            </button>
+                            <div class="collapse show" id="home-collapse">
+                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                    <li><a href="#" class="link-dark rounded">课程表</a></li>
+                                    <li><a href="#" class="link-dark rounded">课程资源</a></li>
+                                    <li><a href="#" class="link-dark rounded active">课程任务点</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="mb-1">
+                            <button class="btn btn-toggle align-items-center rounded collapsed"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#dashboard-collapse" aria-expanded="false">
+                                Dashboard
+                            </button>
+                            <div class="collapse" id="dashboard-collapse">
+                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                    <li><a href="#" class="link-dark rounded">Overview</a></li>
+                                    <li><a href="#" class="link-dark rounded">Weekly</a></li>
+                                    <li><a href="#" class="link-dark rounded">Monthly</a></li>
+                                    <li><a href="#" class="link-dark rounded">Annually</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="mb-1">
+                            <button class="btn btn-toggle align-items-center rounded collapsed"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#orders-collapse" aria-expanded="false">
+                                Orders
+                            </button>
+                            <div class="collapse" id="orders-collapse">
+                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                    <li><a href="#" class="link-dark rounded">New</a></li>
+                                    <li><a href="#" class="link-dark rounded">Processed</a></li>
+                                    <li><a href="#" class="link-dark rounded">Shipped</a></li>
+                                    <li><a href="#" class="link-dark rounded">Returned</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="border-top my-3"></li>
+                        <li class="mb-1">
+                            <button class="btn btn-toggle align-items-center rounded collapsed"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#account-collapse" aria-expanded="false">
+                                Account
+                            </button>
+                            <div class="collapse" id="account-collapse">
+                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                    <li><a href="#" class="link-dark rounded">New...</a></li>
+                                    <li><a href="#" class="link-dark rounded">Profile</a></li>
+                                    <li><a href="#" class="link-dark rounded">Settings</a></li>
+                                    <li><a href="#" class="link-dark rounded">Sign out</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--右侧主界面-->
+            <div class="col-10" style="padding-left: 25px">
+                <!-- 面包屑导航 -->
+                <div class="row" style="margin-top: 15px">
+                    <div class="col">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="/index/">
+                                        <img src="{% static 'img/icons/house-door.svg' %}">
+                                    </a>
+                                </li>
+                                <li class="breadcrumb-item"><a href="#">教学数据资源</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">课程任务点</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+                <div class="row" style="background-color: white;margin-right: 20px;border-radius: 10px;padding: 10px">
+                    <!-- 主界面 -->
+                    <div class="col-12">
+                        <!-- 查询表格 选项 -->
+                        <div class="row">
+                            <div class="col" style="text-align: left;">
+                                <h5>查询表格</h5>
+                            </div>
+                        </div>
+                        <div class="row" style="text-align: right;margin-top: 10px">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <label>任务ID</label>
+                                    </div>
+                                    <div class="col-8">
+                                        <input type="text" class="form-control" id="" placeholder="请输入任务id">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label>任务类型</label>
+                                    </div>
+                                    <div class="col-8">
+                                        <select class="form-select" id="job_type" aria-label="Default select example">
+                                            <option selected value="0">全部</option>
+                                            <option value="1">类型1</option>
+                                            <option value="2">类型2</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label>任务名称</label>
+                                    </div>
+                                    <div class="col-8">
+                                        <select class="form-select" id="job_type" aria-label="Default select example">
+                                            <option selected value="0">全部</option>
+                                            <option value="1">Two</option>
+                                            <option value="2">Three</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-1" style="text-align: right">
+                                <button type="button" class="btn btn-primary" style="width: 100px">查询</button>
+                            </div>
+                        </div>
+                        <div class="row" style="text-align: right;margin-top: 10px">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <label>课程ID</label>
+                                    </div>
+                                    <div class="col-8">
+                                        <input type="text" class="form-control" id="" placeholder="请输入课程id">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label>创建时间</label>
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="input-group input-daterange">
+                                            <input type="date" id="inputDate1" placeholder="开始日期"
+                                                   class="form-control">
+                                            <div class="input-group-addon">-</div>
+                                            <input type="date" id="inputDate2" placeholder="结束日期"
+                                                   class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label>是否删除</label>
+                                    </div>
+                                    <div class="col-8">
+                                        <select class="form-select" id="job_type" aria-label="Default select example">
+                                            <option selected value="0">全部</option>
+                                            <option value="1">是</option>
+                                            <option value="2">否</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-1" style="text-align: right">
+                                <button type="button" class="btn btn-secondary" style="width: 100px">重置</button>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- 新增 批量导入 下载按钮 -->
+                        <div class="row">
+                            <div class="col-3 offset-9" style="text-align: right">
+                                <button type="button" class="btn btn-primary" style="width: 88px">新增</button>
+                                <button type="button" class="btn btn-secondary"
+                                        style="width: 88px;font-size: 15px;height: 100%">批量导入
+                                </button>
+                                <button type="button" class="btn btn-secondary" style="width: 88px;">下载</button>
+                            </div>
+                        </div>
+                        <!-- 表格 -->
+                        <div class="row">
+                            <div class="col-12">
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col">任务id</th>
+                                        <th scope="col">任务点类型</th>
+                                        <th scope="col">任务名称</th>
+                                        <th scope="col">课程id</th>
+                                        <th scope="col">单位id</th>
+                                        <th scope="col">创建时间</th>
+                                        <th scope="col">是否删除</th>
+                                        <th scope="col">操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>123213123</td>
+                                        <td>VideoAttachment</td>
+                                        <td>8.1堰流.mp4</td>
+                                        <td>222673</td>
+                                        <td>1727</td>
+                                        <td>2022-02-22 13：00</td>
+                                        <td>0</td>
+                                        <td>
+                                            <button type="button" class="btn btn-success">查看</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>123213123</td>
+                                        <td>VideoAttachment</td>
+                                        <td>8.1堰流.mp4</td>
+                                        <td>222673</td>
+                                        <td>1727</td>
+                                        <td>2022-02-22 13：00</td>
+                                        <td>0</td>
+                                        <td>
+                                            <button type="button" class="btn btn-success">查看</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>123213123</td>
+                                        <td>VideoAttachment</td>
+                                        <td>8.1堰流.mp4</td>
+                                        <td>222673</td>
+                                        <td>1727</td>
+                                        <td>2022-02-22 13：00</td>
+                                        <td>0</td>
+                                        <td>
+                                            <button type="button" class="btn btn-success">查看</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>123213123</td>
+                                        <td>VideoAttachment</td>
+                                        <td>8.1堰流.mp4</td>
+                                        <td>222673</td>
+                                        <td>1727</td>
+                                        <td>2022-02-22 13：00</td>
+                                        <td>0</td>
+                                        <td>
+                                            <button type="button" class="btn btn-success">查看</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>123213123</td>
+                                        <td>VideoAttachment</td>
+                                        <td>8.1堰流.mp4</td>
+                                        <td>222673</td>
+                                        <td>1727</td>
+                                        <td>2022-02-22 13：00</td>
+                                        <td>0</td>
+                                        <td>
+                                            <button type="button" class="btn btn-success">查看</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>123213123</td>
+                                        <td>VideoAttachment</td>
+                                        <td>8.1堰流.mp4</td>
+                                        <td>222673</td>
+                                        <td>1727</td>
+                                        <td>2022-02-22 13：00</td>
+                                        <td>0</td>
+                                        <td>
+                                            <button type="button" class="btn btn-success">查看</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>123213123</td>
+                                        <td>VideoAttachment</td>
+                                        <td>8.1堰流.mp4</td>
+                                        <td>222673</td>
+                                        <td>1727</td>
+                                        <td>2022-02-22 13：00</td>
+                                        <td>0</td>
+                                        <td>
+                                            <button type="button" class="btn btn-success">查看</button>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- 分页器 -->
+                        <div class="row">
+                            <div class="col-2 offset-5" style="text-align: center">
+                                <p>共XXX条数据</p>
+                            </div>
+                            <div class="col-3 offset-2">
+                                <div style="float:right">
+                                    <nav aria-label="Page navigation example ml-auto">
+                                        <ul class="pagination">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#" aria-label="Previous">
+                                                    <span aria-hidden="true">&laquo;</span>
+                                                </a>
+                                            </li>
+                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">...</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">80</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#" aria-label="Next">
+                                                    <span aria-hidden="true">&raquo;</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

@@ -15,9 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from IndexPage import views
+from IndexPage import views as IndexPageViews
+from LearningCondition import views as LearningConditionViews
+from TeachingData import views as TeachingDataViews
+from TeachingResult import views as TeachingResultViews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/', views.index),
+    path('index/', IndexPageViews.index),
+    path('learning_condition/', LearningConditionViews.portrait),
+    path('teaching_data/', TeachingDataViews.catalog),
+    path('teaching_result/', TeachingResultViews.analyse),
 ]
