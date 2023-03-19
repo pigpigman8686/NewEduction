@@ -2,7 +2,7 @@
 
 <div class="row">
     <div class="col-12">
-        <div id="main" style="width: 80%;height: 410px;"></div>
+        <div id="main" style="width: 75%;height: 630px;"></div>
     </div>
 </div>
 
@@ -15,6 +15,10 @@
         title: {
             text: "师生在线分布（近7日）"
         },
+        tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
         xAxis: {
             data: ['A', 'B', 'C', 'D', 'E']
         },

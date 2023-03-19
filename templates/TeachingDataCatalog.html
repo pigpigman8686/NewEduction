@@ -16,10 +16,10 @@
             <div class="col-2" style="background-color: white;padding-right: 10px">
                 <div class="flex-shrink-0 p-3 bg-white">
                     <ul class="list-unstyled ps-0">
-                        <li class="mb-1">
+                        <li class="mb-1" >
                             <button class="btn btn-toggle align-items-center rounded collapsed"
                                     data-bs-toggle="collapse"
-                                    data-bs-target="#home-collapse" aria-expanded="true">
+                                    data-bs-target="#home-collapse" aria-expanded="true" >
                                 教学资源数据
                             </button>
                             <div class="collapse show" id="home-collapse">
@@ -34,14 +34,12 @@
                             <button class="btn btn-toggle align-items-center rounded collapsed"
                                     data-bs-toggle="collapse"
                                     data-bs-target="#dashboard-collapse" aria-expanded="false">
-                                Dashboard
+                                教学个体数据
                             </button>
                             <div class="collapse" id="dashboard-collapse">
                                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                    <li><a href="#" class="link-dark rounded">Overview</a></li>
-                                    <li><a href="#" class="link-dark rounded">Weekly</a></li>
-                                    <li><a href="#" class="link-dark rounded">Monthly</a></li>
-                                    <li><a href="#" class="link-dark rounded">Annually</a></li>
+                                    <li><a href="#" class="link-dark rounded">学生基本信息</a></li>
+                                    <li><a href="#" class="link-dark rounded">教师基本信息</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -49,14 +47,12 @@
                             <button class="btn btn-toggle align-items-center rounded collapsed"
                                     data-bs-toggle="collapse"
                                     data-bs-target="#orders-collapse" aria-expanded="false">
-                                Orders
+                                教学班级数据
                             </button>
                             <div class="collapse" id="orders-collapse">
                                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                    <li><a href="#" class="link-dark rounded">New</a></li>
-                                    <li><a href="#" class="link-dark rounded">Processed</a></li>
-                                    <li><a href="#" class="link-dark rounded">Shipped</a></li>
-                                    <li><a href="#" class="link-dark rounded">Returned</a></li>
+                                    <li><a href="#" class="link-dark rounded">班级表</a></li>
+                                    <li><a href="#" class="link-dark rounded">用户信息表</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -65,14 +61,58 @@
                             <button class="btn btn-toggle align-items-center rounded collapsed"
                                     data-bs-toggle="collapse"
                                     data-bs-target="#account-collapse" aria-expanded="false">
-                                Account
+                                教学行为数据
                             </button>
                             <div class="collapse" id="account-collapse">
                                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                    <li><a href="#" class="link-dark rounded">New...</a></li>
-                                    <li><a href="#" class="link-dark rounded">Profile</a></li>
-                                    <li><a href="#" class="link-dark rounded">Settings</a></li>
-                                    <li><a href="#" class="link-dark rounded">Sign out</a></li>
+                                    <li><a href="#" class="link-dark rounded">课程活动参与</a></li>
+                                    <li><a href="#" class="link-dark rounded">讨论流水</a></li>
+                                    <li><a href="#" class="link-dark rounded">已发布作业</a></li>
+                                    <li><a href="#" class="link-dark rounded">试题表</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="mb-1">
+                            <button class="btn btn-toggle align-items-center rounded collapsed"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#account-collapse" aria-expanded="false">
+                                学习行为数据
+                            </button>
+                            <div class="collapse" id="account-collapse">
+                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                    <li><a href="#" class="link-dark rounded">学前</a></li>
+                                    <li><a href="#" class="link-dark rounded">学中</a></li>
+                                    <li><a href="#" class="link-dark rounded">学后</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="mb-1">
+                            <button class="btn btn-toggle align-items-center rounded collapsed"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#account-collapse" aria-expanded="false">
+                                教学评估数据
+                            </button>
+                            <div class="collapse" id="account-collapse">
+                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                    <li><a href="#" class="link-dark rounded">考试表</a></li>
+                                    <li><a href="#" class="link-dark rounded">试题表</a></li>
+                                    <li><a href="#" class="link-dark rounded">任务点完成</a></li>
+
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="mb-1">
+                            <button class="btn btn-toggle align-items-center rounded collapsed"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#account-collapse" aria-expanded="false">
+                                教学管理数据
+                            </button>
+                            <div class="collapse" id="account-collapse">
+                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                    <li><a href="#" class="link-dark rounded">登陆流水</a></li>
+                                    <li><a href="#" class="link-dark rounded">上线用户</a></li>
+                                    <li><a href="#" class="link-dark rounded">在线时长</a></li>
+
                                 </ul>
                             </div>
                         </li>
@@ -91,7 +131,7 @@
                                         <img src="{% static 'img/icons/house-door.svg' %}">
                                     </a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="#">教学数据资源</a></li>
+                                <li class="breadcrumb-item"><a href="#" style="text-decoration:none; color:black;" >教学资源数据</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">课程任务点</li>
                             </ol>
                         </nav>
@@ -103,17 +143,17 @@
                         <!-- 查询表格 选项 -->
                         <div class="row">
                             <div class="col" style="text-align: left;">
-                                <h5>查询表格</h5>
+                                <h5><b>查询表格</b></h5>
                             </div>
                         </div>
                         <div class="row" style="text-align: right;margin-top: 10px">
                             <div class="col">
                                 <div class="row">
                                     <div class="col-3">
-                                        <label>任务ID</label>
+                                        <label style="color: black;">任务ID</label>
                                     </div>
                                     <div class="col-8">
-                                        <input type="text" class="form-control" id="" placeholder="请输入任务id">
+                                        <input style="border: 0px;outline:none;cursor: pointer;" type="text" class="form-control" id="demo"  placeholder="请输入任务id">
                                     </div>
                                 </div>
                             </div>
@@ -123,7 +163,7 @@
                                         <label>任务类型</label>
                                     </div>
                                     <div class="col-8">
-                                        <select class="form-select" id="job_type" aria-label="Default select example">
+                                        <select class="form-select" id="job_type" aria-label="Default select example" style="border: 0;display: block;position: relative;color:#6c6c6c">
                                             <option selected value="0">全部</option>
                                             <option value="1">类型1</option>
                                             <option value="2">类型2</option>
@@ -137,7 +177,7 @@
                                         <label>任务名称</label>
                                     </div>
                                     <div class="col-8">
-                                        <select class="form-select" id="job_type" aria-label="Default select example">
+                                        <select class="form-select" id="job_type" aria-label="Default select example" style="border: 0;display: block;position: relative;color:#6c6c6c">
                                             <option selected value="0">全部</option>
                                             <option value="1">Two</option>
                                             <option value="2">Three</option>
@@ -146,7 +186,7 @@
                                 </div>
                             </div>
                             <div class="col-1" style="text-align: right">
-                                <button type="button" class="btn btn-primary" style="width: 100px">查询</button>
+                                <button type="button" class="btn btn-primary" style="border-style:none;font-size: 12px;width: 80px;margin-left: 5px">查询</button>
                             </div>
                         </div>
                         <div class="row" style="text-align: right;margin-top: 10px">
@@ -156,7 +196,7 @@
                                         <label>课程ID</label>
                                     </div>
                                     <div class="col-8">
-                                        <input type="text" class="form-control" id="" placeholder="请输入课程id">
+                                        <input style="border: 0px;outline:none;cursor: pointer;" type="text" class="form-control" id="demo" style="color:#6c6c6c" placeholder="请输入课程id">
                                     </div>
                                 </div>
                             </div>
@@ -165,15 +205,15 @@
                                     <div class="col-4">
                                         <label>创建时间</label>
                                     </div>
-                                    <div class="col-8">
+
                                         <div class="input-group input-daterange">
-                                            <input type="date" id="inputDate1" placeholder="开始日期"
+                                            <input type="date" id="inputDate1" style="border: 0px;outline:none;cursor: pointer;color:#6c6c6c" placeholder="开始日期"
                                                    class="form-control">
                                             <div class="input-group-addon">-</div>
-                                            <input type="date" id="inputDate2" placeholder="结束日期"
+                                            <input type="date" id="inputDate2" style="border: 0px;outline:none;cursor: pointer;color:#6c6c6c" placeholder="结束日期"
                                                    class="form-control">
                                         </div>
-                                    </div>
+
                                 </div>
                             </div>
                             <div class="col">
@@ -182,7 +222,7 @@
                                         <label>是否删除</label>
                                     </div>
                                     <div class="col-8">
-                                        <select class="form-select" id="job_type" aria-label="Default select example">
+                                        <select class="form-select" id="job_type" aria-label="Default select example" style="border: 0;display: block;position: relative;color:#6c6c6c">
                                             <option selected value="0">全部</option>
                                             <option value="1">是</option>
                                             <option value="2">否</option>
@@ -191,18 +231,16 @@
                                 </div>
                             </div>
                             <div class="col-1" style="text-align: right">
-                                <button type="button" class="btn btn-secondary" style="width: 100px">重置</button>
+                                <button type="button" class="btn btn-secondary" id="" style="border-style:none;font-size: 12px;color:black;background:#F7F8FA;width: 80px;margin-left: 5px">&#8634 重置</button>
                             </div>
                         </div>
                         <hr>
                         <!-- 新增 批量导入 下载按钮 -->
                         <div class="row">
                             <div class="col-3 offset-9" style="text-align: right">
-                                <button type="button" class="btn btn-primary" style="width: 88px">新增</button>
-                                <button type="button" class="btn btn-secondary"
-                                        style="width: 88px;font-size: 15px;height: 100%">批量导入
-                                </button>
-                                <button type="button" class="btn btn-secondary" style="width: 88px;">下载</button>
+                                <button type="button" class="btn btn-primary" style="border-style:none;width: 88px; font-size: 12px;">&#10010 新增</button>
+                                <button type="button" class="btn btn-secondary" style="border-style:none;width: 88px; font-size: 12px;height: 100%;color:black;background:#F7F8FA;width: 80px;">&#160批量导入</button>
+                                <button type="button" class="btn btn-secondary" style="border-style:none;width: 88px; font-size: 12px;color:black;background:#F7F8FA;width: 80px;">&#8595 下载</button>
                             </div>
                         </div>
                         <!-- 表格 -->
@@ -224,86 +262,86 @@
                                     <tbody>
                                     <tr>
                                         <td>123213123</td>
-                                        <td>VideoAttachment</td>
+                                        <td><img src="{% static 'img/icons/VideoAttachment.svg' %}" alt="Logo" width="32" height="32">VideoAttachment</td>
                                         <td>8.1堰流.mp4</td>
                                         <td>222673</td>
                                         <td>1727</td>
                                         <td>2022-02-22 13：00</td>
                                         <td>0</td>
                                         <td>
-                                            <button type="button" class="btn btn-success">查看</button>
+                                            <button type="button" class="btn btn-success" style="border-style:none;color:blue;background:rgba(0,0,0,0)">查看</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>123213123</td>
-                                        <td>VideoAttachment</td>
+                                        <td><img src="{% static 'img/icons/VideoAttachment.svg' %}" alt="Logo" width="32" height="32">VideoAttachment</td>
                                         <td>8.1堰流.mp4</td>
                                         <td>222673</td>
                                         <td>1727</td>
                                         <td>2022-02-22 13：00</td>
                                         <td>0</td>
                                         <td>
-                                            <button type="button" class="btn btn-success">查看</button>
+                                            <button type="button" class="btn btn-success" style="border-style:none;color:blue;background:rgba(0,0,0,0)">查看</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>123213123</td>
-                                        <td>VideoAttachment</td>
+                                        <td><img src="{% static 'img/icons/VideoAttachment.svg' %}" alt="Logo" width="32" height="32">VideoAttachment</td>
                                         <td>8.1堰流.mp4</td>
                                         <td>222673</td>
                                         <td>1727</td>
                                         <td>2022-02-22 13：00</td>
                                         <td>0</td>
                                         <td>
-                                            <button type="button" class="btn btn-success">查看</button>
+                                            <button type="button" class="btn btn-success" style="border-style:none;color:blue;background:rgba(0,0,0,0)">查看</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>123213123</td>
-                                        <td>VideoAttachment</td>
+                                        <td><img src="{% static 'img/icons/VideoAttachment.svg' %}" alt="Logo" width="32" height="32">VideoAttachment</td>
                                         <td>8.1堰流.mp4</td>
                                         <td>222673</td>
                                         <td>1727</td>
                                         <td>2022-02-22 13：00</td>
                                         <td>0</td>
                                         <td>
-                                            <button type="button" class="btn btn-success">查看</button>
+                                            <button type="button" class="btn btn-success" style="border-style:none;color:blue;background:rgba(0,0,0,0)">查看</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>123213123</td>
-                                        <td>VideoAttachment</td>
+                                        <td><img src="{% static 'img/icons/DocumentAttachment.png' %}" alt="Logo" width="32" height="32"> DocumentAttachment</td>
                                         <td>8.1堰流.mp4</td>
                                         <td>222673</td>
                                         <td>1727</td>
                                         <td>2022-02-22 13：00</td>
                                         <td>0</td>
                                         <td>
-                                            <button type="button" class="btn btn-success">查看</button>
+                                            <button type="button" class="btn btn-success" style="border-style:none;color:blue;background:rgba(0,0,0,0)">查看</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>123213123</td>
-                                        <td>VideoAttachment</td>
+                                        <td><img src="{% static 'img/icons/VideoAttachment.svg' %}" alt="Logo" width="32" height="32">VideoAttachment</td>
                                         <td>8.1堰流.mp4</td>
                                         <td>222673</td>
                                         <td>1727</td>
                                         <td>2022-02-22 13：00</td>
                                         <td>0</td>
                                         <td>
-                                            <button type="button" class="btn btn-success">查看</button>
+                                            <button type="button" class="btn btn-success" style="border-style:none;color:blue;background:rgba(0,0,0,0)">查看</button>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>123213123</td>
-                                        <td>VideoAttachment</td>
+                                        <td><img src="{% static 'img/icons/VideoAttachment.svg' %}" alt="Logo" width="32" height="32">VideoAttachment</td>
                                         <td>8.1堰流.mp4</td>
                                         <td>222673</td>
                                         <td>1727</td>
                                         <td>2022-02-22 13：00</td>
                                         <td>0</td>
                                         <td>
-                                            <button type="button" class="btn btn-success">查看</button>
+                                            <button type="button" class="btn btn-success" style="border-style:none;color:blue;background:rgba(0,0,0,0)">查看</button>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -312,11 +350,12 @@
                         </div>
                         <!-- 分页器 -->
                         <div class="row">
-                            <div class="col-2 offset-5" style="text-align: center">
-                                <p>共XXX条数据</p>
-                            </div>
-                            <div class="col-3 offset-2">
-                                <div style="float:right">
+
+                            <p style="margin-left: 1050px;color:#6c6c6c">共 658 条数据</p>
+
+
+
+                                <div style="margin-left: 900px">
                                     <nav aria-label="Page navigation example ml-auto">
                                         <ul class="pagination">
                                             <li class="page-item disabled">
@@ -325,11 +364,11 @@
                                                 </a>
                                             </li>
                                             <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">4</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">...</a></li>
-                                            <li class="page-item"><a class="page-link" href="#">80</a></li>
+                                            <li class="page-item"><a class="page-link" href="#" style="color:#6c6c6c">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#" style="color:#6c6c6c">3</a></li>
+                                            <li class="page-item"><a class="page-link" href="#" style="color:#6c6c6c">4</a></li>
+                                            <li class="page-item"><a class="page-link" href="#" style="color:#6c6c6c">...</a></li>
+                                            <li class="page-item"><a class="page-link" href="#" style="color:#6c6c6c">80</a></li>
                                             <li class="page-item">
                                                 <a class="page-link" href="#" aria-label="Next">
                                                     <span aria-hidden="true">&raquo;</span>
@@ -338,7 +377,7 @@
                                         </ul>
                                     </nav>
                                 </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>

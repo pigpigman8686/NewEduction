@@ -1,7 +1,7 @@
 {% extends 'component/Layout.html' %}
 {% load static %}
 {% block head %}
-
+<link href="{% static 'css/custom/component/TeachingResult.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -18,8 +18,8 @@
                                 <img src="{% static 'img/icons/house-door.svg' %}">
                             </a>
                         </li>
-                        <li class="breadcrumb-item"><a href="#">教学数据资源</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">课程任务点</li>
+                        <li class="breadcrumb-item"><a href="#" style="text-decoration:none; color:black;">教学效果评价</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">教学效果分析</li>
                     </ol>
                 </nav>
             </div>
@@ -30,45 +30,66 @@
                 <!-- 查询表格 选项 -->
                 <div class="row" style=";margin-top: 10px;">
                     <div class="col">
-                        <label>学年</label><input type="text" class="form-control" id="studyyear"
-                                                  placeholder="请输入任务id"
-                                                  style="display: inline;width: 300px;margin-left: 10px">
+                        <label>学年</label>
+                        <select class="form-select" id="job_type" aria-label="Default select example" style="border: 0;display: block;position: relative;display: inline;background:#F7F8FA;width:238px;height:32px;border-radius:5px;margin-left: 10px">
+                                            <option selected value="0">全部</option>
+                                            <option value="1">类型1</option>
+                                            <option value="2">类型2</option>
+                                        </select></div>
+                    <div class="col">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <label>课程时间</label>
+                                    </div>
+
+                                        <div class="input-group input-daterange">
+                                            <input type="date" id="inputDate1" placeholder="开始日期" style="border: 0px;outline:none;cursor: pointer;display: inline;background:#F7F8FA;width:119px;height:32px;border-radius:5px;"
+                                                   class="form-control">
+                                            <div class="input-group-addon">-</div>
+                                            <input type="date" id="inputDate2" placeholder="结束日期" style="border: 0px;outline:none;cursor: pointer;display: inline;background:#F7F8FA;width:119px;height:32px;border-radius:5px;"
+                                                   class="form-control">
+                                        </div>
+
+                                </div>
+                            </div>
+                    <div class="col">
+                        <label>课程名称</label><input type="text" class="form-control" id="demo"
+                                                  placeholder="数据结构"
+                                                  style="border: 0px;outline:none;cursor: pointer; display: inline;background:#F7F8FA;width:238px;height:32px;border-radius:5px;margin-left: 10px">
                     </div>
                     <div class="col">
-                        <label>学年</label><input type="text" class="form-control" id="studyyear"
-                                                  placeholder="请输入任务id"
-                                                  style="display: inline;width: 300px;margin-left: 10px">
-                    </div>
-                    <div class="col">
-                        <label>学年</label><input type="text" class="form-control" id="studyyear"
-                                                  placeholder="请输入任务id"
-                                                  style="display: inline;width: 300px;margin-left: 10px">
-                    </div>
-                    <div class="col">
-                        <label>学年</label><input type="text" class="form-control" id="studyyear"
-                                                  placeholder="请输入任务id"
-                                                  style="display: inline;width: 300px;margin-left: 10px">
-                    </div>
+                        <label>授课教师</label>
+                        <select class="form-select" id="job_type" aria-label="Default select example" style="border: 0;display: block;position: relative;display: inline;background:#F7F8FA;width:238px;height:32px;border-radius:5px;margin-left: 10px">
+                                            <option selected value="0">张金艳</option>
+                                            <option value="1">类型1</option>
+                                            <option value="2">类型2</option>
+                                        </select></div>
                 </div>
                 <div class="row" style=";margin-top: 10px">
                     <div class="col">
-                        <label>学年</label><input type="text" class="form-control" id="studyyear"
-                                                  placeholder="请输入任务id"
-                                                  style="display: inline;width: 300px;margin-left: 10px">
-                    </div>
+                        <label>学院</label>
+                        <select class="form-select" id="job_type" aria-label="Default select example" style="border: 0;display: block;position: relative;display: inline;background:#F7F8FA;width:238px;height:32px;border-radius:5px;margin-left: 10px">
+                                            <option selected value="0">全部</option>
+                                            <option value="1">类型1</option>
+                                            <option value="2">类型2</option>
+                                        </select></div>
                     <div class="col">
-                        <label>学年</label><input type="text" class="form-control" id="studyyear"
-                                                  placeholder="请输入任务id"
-                                                  style="display: inline;width: 300px;margin-left: 10px">
-                    </div>
+                        <label>专业</label>
+                        <select class="form-select" id="job_type" aria-label="Default select example" style="border: 0;display: block;position: relative;display: inline;background:#F7F8FA;width:238px;height:32px;border-radius:5px;margin-left: 10px">
+                                            <option selected value="0">全部</option>
+                                            <option value="1">类型1</option>
+                                            <option value="2">类型2</option>
+                                        </select></div>
                     <div class="col">
-                        <label>学年</label><input type="text" class="form-control" id="studyyear"
-                                                  placeholder="请输入任务id"
-                                                  style="display: inline;width: 300px;margin-left: 10px">
-                    </div>
-                    <div class="col" style="text-align: left">
-                        <button type="button" class="btn btn-primary" style="width: 100px">查询</button>
-                        <button type="button" class="btn btn-secondary" style="width: 100px">重置</button>
+                        <label style="margin-left: 30px">班级</label>
+                        <select class="form-select" id="job_type" aria-label="Default select example" style="border: 0;display: block;position: relative;display: inline;background:#F7F8FA;width:238px;height:32px;border-radius:5px;margin-left: 10px">
+                                            <option selected value="0">全部</option>
+                                            <option value="1">类型1</option>
+                                            <option value="2">类型2</option>
+                                        </select></div>
+                    <div class="col" style="text-align: center">
+                        <button type="button" class="btn btn-primary" style="border-style:none;font-size: 12px;width: 80px;margin-left: 50px">查询</button>
+                        <button type="button" class="btn btn-secondary" style="border-style:none;display: inline;font-size: 12px;color:black;background:#F7F8FA;width:80px;height:32px;border-radius:5px;margin-left: 20px">&#8634 重置</button>
                     </div>
                 </div>
             </div>
@@ -76,7 +97,7 @@
         <!-- 教学进度监控标题 -->
         <div class="row" style="margin-top: 10px">
             <div class="col">
-                <h5 style="color: #0b5ed7">教学进度监控</h5>
+                <h5 style="color: #0b5ed7"><b>教学进度监控</b></h5>
             </div>
         </div>
         <!-- 教学进度监控主界面 -->
@@ -85,7 +106,7 @@
             <div class="col">
                 <div class="row">
                     <div class="col-4">
-                        <img src="{% static 'img/icons/safe.svg' %}" alt="Logo" width="30" height="24"
+                        <img src="{% static 'img/icons/Course progress.png' %}" alt="Logo" width="45" height="40"
                              class="m-auto">
                     </div>
                     <div class="col-8">
@@ -96,7 +117,7 @@
                         </div>
                         <div class="row">
                             <div class="col-7">
-                                <h4><b>80</b></h4>
+                                <h3><b>80</b></h3>
                             </div>
                             <div class="col-2">
                                 %
@@ -106,8 +127,8 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <p style="font-size: 12px;display: inline">较昨日</p>
-                        <p style="font-size: 12px;color: mediumseagreen;margin-left: 10px;display: inline">4%↓</p>
+                        <p style="font-size: 13px;display: inline">较昨日</p>
+                        <p style="font-size: 13px;color: mediumseagreen;margin-left: 10px;display: inline">4%&#8595</p>
                         <p></p>
                     </div>
                 </div>
@@ -115,7 +136,7 @@
             <div class="col">
                 <div class="row">
                     <div class="col-4">
-                        <img src="{% static 'img/icons/safe.svg' %}" alt="Logo" width="30" height="24"
+                        <img src="{% static 'img/icons/completion rate.png' %}" alt="Logo" width="45" height="40"
                              class="m-auto">
                     </div>
                     <div class="col-8">
@@ -126,7 +147,7 @@
                         </div>
                         <div class="row">
                             <div class="col-7">
-                                <h4><b>68</b></h4>
+                                <h3><b>68</b></h3>
                             </div>
                             <div class="col-2">
                                 %
@@ -136,8 +157,8 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <p style="font-size: 12px;display: inline">较昨日</p>
-                        <p style="font-size: 12px;color: mediumseagreen;margin-left: 10px;display: inline">4%↓</p>
+                        <p style="font-size: 13px;display: inline">较昨日</p>
+                        <p style="font-size: 13px;color: mediumseagreen;margin-left: 10px;display: inline">4%&#8595</p>
                         <p></p>
                     </div>
                 </div>
@@ -145,7 +166,7 @@
             <div class="col">
                 <div class="row">
                     <div class="col-4">
-                        <img src="{% static 'img/icons/safe.svg' %}" alt="Logo" width="30" height="24"
+                        <img src="{% static 'img/icons/completion rate.png' %}" alt="Logo" width="45" height="40"
                              class="m-auto">
                     </div>
                     <div class="col-8">
@@ -156,7 +177,7 @@
                         </div>
                         <div class="row">
                             <div class="col-7">
-                                <h4><b>87</b></h4>
+                                <h3><b>87</b></h3>
                             </div>
                             <div class="col-2">
                                 %
@@ -166,8 +187,8 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <p style="font-size: 12px;display: inline">较昨日</p>
-                        <p style="font-size: 12px;color: orangered;margin-left: 10px;display: inline">10%↑</p>
+                        <p style="font-size: 13px;display: inline">较昨日</p>
+                        <p style="font-size: 13px;color: orangered;margin-left: 10px;display: inline">10%&#8593</p>
                         <p></p>
                     </div>
                 </div>
@@ -175,7 +196,7 @@
             <div class="col">
                 <div class="row">
                     <div class="col-4">
-                        <img src="{% static 'img/icons/safe.svg' %}" alt="Logo" width="30" height="24"
+                        <img src="{% static 'img/icons/Examination achievement rate.png' %}" alt="Logo" width="45" height="40"
                              class="m-auto">
                     </div>
                     <div class="col-8">
@@ -186,7 +207,7 @@
                         </div>
                         <div class="row">
                             <div class="col-7">
-                                <h4><b>41</b></h4>
+                                <h3><b>41</b></h3>
                             </div>
                             <div class="col-2">
                                 %
@@ -196,8 +217,8 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <p style="font-size: 12px;display: inline">较昨日</p>
-                        <p style="font-size: 12px;color: orangered;margin-left: 10px;display: inline">10%↑</p>
+                        <p style="font-size: 13px;display: inline">较昨日</p>
+                        <p style="font-size: 13px;color: orangered;margin-left: 10px;display: inline">10%&#8593</p>
                         <p></p>
                     </div>
                 </div>
@@ -205,7 +226,7 @@
             <div class="col">
                 <div class="row">
                     <div class="col-4">
-                        <img src="{% static 'img/icons/safe.svg' %}" alt="Logo" width="30" height="24"
+                        <img src="{% static 'img/icons/Examination achievement rate.png' %}" alt="Logo" width="45" height="40"
                              class="m-auto">
                     </div>
                     <div class="col-8">
@@ -216,7 +237,7 @@
                         </div>
                         <div class="row">
                             <div class="col-7">
-                                <h4><b>80</b></h4>
+                                <h3><b>80</b></h3>
                             </div>
                             <div class="col-2">
                                 %
@@ -226,8 +247,8 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <p style="font-size: 12px;display: inline">较昨日</p>
-                        <p style="font-size: 12px;color: mediumseagreen;margin-left: 10px;display: inline">4%↓</p>
+                        <p style="font-size: 13px;display: inline">较昨日</p>
+                        <p style="font-size: 13px;color: mediumseagreen;margin-left: 10px;display: inline">4%&#8595</p>
                         <p></p>
                     </div>
                 </div>
@@ -237,7 +258,7 @@
         <!-- 学习行为分析标题 -->
         <div class="row" style="margin-top: 10px">
             <div class="col">
-                <h5 style="color: #0b5ed7">学习行为分析</h5>
+                <h5 style="color: #0b5ed7"><b>学习行为分析</b></h5>
             </div>
         </div>
         <!-- 学习行为分析主界面-->
@@ -268,7 +289,36 @@
         // 指定图表的配置项和数据
         option = {
             title: {
-                text: "上课出勤情况（近7日）"
+                text: "上课出勤情况（近7日）",
+                subtext: "注意：近4天出勤率未达100%，点击查看未出勤学生名单",
+                fontSize: 180,
+                sublink: '#',
+                subtarget: 'self',
+                backgroundColor: '#F9D7D9',
+                x:'center'
+            },
+            textStyle: {//主标题文本样式{"fontSize": 18,"fontWeight": "bolder","color": "#333"}
+                fontStyle: 'normal',
+                fontWeight: 'normal',
+            },
+            subtextStyle: {
+                fontWeight: "bolder",
+                fontFamily: "Arial"
+            },
+            legend: {
+                orient: 'horizontal',
+                x:'center',
+                y:'bottom',
+                itemGap: 40,
+                itemHeight: 5,
+                data:[{
+                name: '实到人数',
+                textStyle: {fontWeight: 'bold', color: 'black'}
+                }]
+                },
+            tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
             },
             xAxis: {
                 data: ['A', 'B', 'C', 'D', 'E']
@@ -276,6 +326,7 @@
             yAxis: {},
             series: [
                 {
+                name: '实到人数',
                     data: [10, 22, 28, 23, 19],
                     type: 'line',
                     smooth: true
@@ -285,7 +336,26 @@
 
         option1 = {
             title: {
-                text: "上课互动次数（近7日）"
+                text: "          上课互动次数（近7日）          ",
+                subtext: "学生上课互动率高，继续保持！",
+                backgroundColor: '#BCEBDC',
+                x:'center'
+            },
+            legend: {
+                orient: 'horizontal',
+                x:'center',
+                y:'bottom',
+                itemGap: 40,
+                itemHeight: 5,
+                data:[{
+                name: '上课互动次数',
+                icon: "rect",
+                textStyle: {fontWeight: 'bold', color: 'black'}
+                }]
+                },
+            tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
             },
             xAxis: {
                 data: ['A', 'B', 'C', 'D', 'E']
@@ -293,6 +363,7 @@
             yAxis: {},
             series: [
                 {
+                    name:'上课互动次数',
                     type: 'bar',
                     data: [
                         10,
@@ -324,13 +395,20 @@
 
         option2 = {
             title: {
-                text: "上课互动类型（近7日）"
+                text: "          上课互动类型（近7日）          ",
+                subtext: "学生上课互动率高，继续保持！",
+                backgroundColor: '#BCEBDC',
+                x:'center'
+            },
+            tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
             },
             xAxis: {
 
             },
             yAxis: {
-                data: ['A', 'B', 'C', 'D', 'E']
+                data: ['抢答', '选人', '表演', '小组', '提醒']
             },
             series: [
                 {

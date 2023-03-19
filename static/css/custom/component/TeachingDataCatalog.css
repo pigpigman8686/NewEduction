@@ -1,3 +1,4 @@
+select{border: none;outline: none;}
 .nav-flush .nav-link {
     border-radius: 0
 }
@@ -34,7 +35,7 @@
 
 .btn-toggle:hover, .btn-toggle:focus {
     color: rgba(0, 0, 0, .85);
-    background-color: #d2f4ea
+    background-color: #d7eaff
 }
 
 .btn-toggle::before {
@@ -62,7 +63,7 @@
 }
 
 .btn-toggle-nav a:hover, .btn-toggle-nav a:focus {
-    background-color: #d2f4ea
+    background-color: #d7eaff
 }
 
 .scrollarea {
@@ -90,4 +91,11 @@
         font-size: 3.5rem
     }
 }
-
+#demo{
+background:#F7F8FA;width:238px;height:32px;border-radius:5px}
+#job_type{
+background:#F7F8FA;width:238px;height:32px;border-radius:5px}
+#inputDate1{
+background:#F7F8FA;width:119px;height:32px;border-radius:5px;margin-left: 35px}
+#inputDate2{
+background:#F7F8FA;width:119px;height:32px;border-radius:5px}
