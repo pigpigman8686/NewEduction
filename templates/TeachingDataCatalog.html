@@ -16,10 +16,10 @@
             <div class="col-2" style="background-color: white;padding-right: 10px">
                 <div class="flex-shrink-0 p-3 bg-white">
                     <ul class="list-unstyled ps-0">
-                        <li class="mb-1" >
+                        <li class="mb-1">
                             <button class="btn btn-toggle align-items-center rounded collapsed"
                                     data-bs-toggle="collapse"
-                                    data-bs-target="#home-collapse" aria-expanded="true" >
+                                    data-bs-target="#home-collapse" aria-expanded="true">
                                 教学资源数据
                             </button>
                             <div class="collapse show" id="home-collapse">
@@ -192,7 +192,7 @@
                         <div class="row" style="text-align: right;margin-top: 10px">
                             <div class="col">
                                 <div class="row">
-                                    <div class="col-3">
+                                    <div class="col-3" style="margin-left: 5px;">
                                         <label>课程ID</label>
                                     </div>
                                     <div class="col-8">
@@ -200,25 +200,21 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
-                                <div class="row">
-                                    <div class="col-4">
-                                        <label>创建时间</label>
-                                    </div>
-
-                                        <div class="input-group input-daterange">
-                                            <input type="date" id="inputDate1" style="border: 0px;outline:none;cursor: pointer;color:#6c6c6c" placeholder="开始日期"
-                                                   class="form-control">
-                                            <div class="input-group-addon">-</div>
-                                            <input type="date" id="inputDate2" style="border: 0px;outline:none;cursor: pointer;color:#6c6c6c" placeholder="结束日期"
-                                                   class="form-control">
-                                        </div>
-
-                                </div>
+                            <div class="col-4">
+                                    <label style="display: inline">课程时间</label>
+                    <div class="input-group input-daterange" style="display: inline">
+                        <input type="date" id="inputDate1" placeholder="开始日期"
+                               style="border: 0px;outline:none;cursor: pointer;display: inline;background:#F7F8FA;width:116px;height:32px;border-radius:5px;margin-left: 10px;"
+                               class="form-control">
+                        <div class="input-group-addon" style="display: inline">-</div>
+                        <input type="date" id="inputDate2" placeholder="结束日期"
+                               style="border: 0px;outline:none;cursor: pointer;display: inline;background:#F7F8FA;width:116px;height:32px;border-radius:5px;"
+                               class="form-control">
+                    </div>
                             </div>
                             <div class="col">
                                 <div class="row">
-                                    <div class="col-4">
+                                    <div class="col-4" style="margin-left: -10px;">
                                         <label>是否删除</label>
                                     </div>
                                     <div class="col-8">
@@ -234,7 +230,7 @@
                                 <button type="button" class="btn btn-secondary" id="" style="border-style:none;font-size: 12px;color:black;background:#F7F8FA;width: 80px;margin-left: 5px">&#8634 重置</button>
                             </div>
                         </div>
-                        <hr>
+                        <hr style="color:#c3d3db">
                         <!-- 新增 批量导入 下载按钮 -->
                         <div class="row">
                             <div class="col-3 offset-9" style="text-align: right">
