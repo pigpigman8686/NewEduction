@@ -326,9 +326,7 @@
             title: {
                 text: "上课互动类型（近7日）"
             },
-            xAxis: {
-
-            },
+            xAxis: {},
             yAxis: {
                 data: ['A', 'B', 'C', 'D', 'E']
             },
@@ -363,10 +361,66 @@
             ]
         };
 
+        option3 = {
+            title: {
+                text: "上课出勤情况（近7日）",
+                x: 'center',
+                textStyle: {
+                    color: '#91cc75'
+                },
+                subtext: "{a|注意：近4天出勤率未达100%，点击查看未出勤学生名单}",
+                subtextStyle: {
+                    fontWeight: "bolder",
+                    fontFamily: "Arial",
+                    fontSize: 12,
+                    sublink: '#',
+                    subtarget: 'self',
+                    rich: {
+                        a: {
+                            backgroundColor: '#91cc75',
+                        }
+                    }
+                },
+                {#backgroundColor: '#F9D7D9'#}
+            },
+            textStyle: {//主标题文本样式{"fontSize": 18,"fontWeight": "bolder","color": "#333"}
+                fontStyle: 'normal',
+                fontWeight: 'normal',
+            },
+
+            legend: {
+                orient: 'horizontal',
+                x: 'center',
+                y: 'bottom',
+                itemGap: 40,
+                itemHeight: 5,
+                data: [{
+                    name: '实到人数',
+                    textStyle: {fontWeight: 'bold', color: 'black'}
+                }]
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            xAxis: {
+                data: ['A', 'B', 'C', 'D', 'E']
+            },
+            yAxis: {},
+            series: [
+                {
+                    name: '实到人数',
+                    data: [10, 22, 28, 23, 19],
+                    type: 'line',
+                    smooth: true
+                }
+            ]
+        };
+
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
         myChart1.setOption(option1);
-        myChart2.setOption(option2);
+        myChart2.setOption(option3);
     </script>
 
 {% endblock %}

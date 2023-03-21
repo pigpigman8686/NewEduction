@@ -11,6 +11,10 @@ from django.db.models.functions import Cast
 # Create your views here.
 
 
+def course(request):
+
+    return render(request, 'Courses.html')
+
 def portrait(request):
     message = {}
     # 找成绩前40%的peisonid

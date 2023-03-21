@@ -1,0 +1,342 @@
+{% extends 'component/Layout.html' %}
+{% load static %}
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+    <div style="position: -webkit-sticky; /* Safari */
+            position: fixed;
+            right: 12px;
+            margin-top: 10px;
+            z-index: -1;
+            background-color: white;
+            {#border-radius: 5px;#}
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            width: 30px;
+            height: 100px;box-shadow: 0 2px 6px 0 cornflowerblue" class="text-center">
+        <a href="#" style="text-decoration: none;writing-mode: tb-lr;">基本信息</a>
+    </div>
+    <div style="position: -webkit-sticky; /* Safari */
+            position: fixed;
+            right: 12px;
+            margin-top: 116px;
+            z-index: -2;
+            background-color: white;
+            {#border-radius: 5px;#}
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            width: 30px;
+            height: 100px;" class="text-center">
+        <a href="#" style="text-decoration: none;writing-mode: tb-lr;">学习行为</a>
+    </div>
+
+    <div class="container-fluid"
+         style="margin-left: 40px;margin-right: 40px;width: auto;background-color: white;margin-top: 80px;border-radius: 10px">
+        <!-- 标题 -->
+        <div class="row text-center">
+            <div class="col-12">
+                <h5 style="margin-top: 10px"><b>2022-2023学年第1学期--《数据结构》课程分析报告</b></h5>
+            </div>
+        </div>
+        <!-- 头像 -->
+        <div class="row text-center">
+            <div class="col-12">
+                <img src="{% static 'img/1.png' %}" class="img-circle img-thumbnail"
+                     style="width:80px;height:80px;border-radius:50%">
+            </div>
+        </div>
+        <!-- 个人信息 -->
+        <div class="row text-center" style="margin-top: 10px">
+            <div class="col-12">
+                <h6 style="display:inline;"><b>毛浩地 | 2350210336</b></h6>
+            </div>
+        </div>
+        <!-- 学院班级 -->
+        <div class="row text-center" style="margin-top: 10px">
+            <div class="col-12">
+                <span>信息工程学院 | 21级大数据1班</span>
+            </div>
+        </div>
+        <!-- 学习概况(查看评价标准) -->
+        <div class="row">
+            <div class="col-12">
+                <div class="row" style="margin-top: 10px">
+                    <div class="col-1" style="width: 10px">
+                        <div style="width: 4px;height:100%;background-color: #0d6efd;display: inline-block;"></div>
+                    </div>
+                    <div class="col-11">
+                        <h6 style="color:#0d6efd;display: inline;"><b>学习概况</b></h6><span style="font-size: 12px">(查看评价标准)</span>
+                    </div>
+                </div>
+                <div class="row text-center" style="margin-top: 10px">
+                    <div class="col-2 offset-2">
+                        <div class="card" style="width: 10rem;box-shadow: #C4D8F5 1px 1px 2px 0">
+                            <div class="card-body">
+                                <h5 class="card-title"><b>良好</b></h5>
+                                {#                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>#}
+                                <p class="card-text">学习行为</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="card" style="width: 10rem;box-shadow: #C4D8F5 1px 1px 2px 0">
+                            <div class="card-body">
+                                <h5 class="card-title"><b>良好</b></h5>
+                                {#                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>#}
+                                <p class="card-text">学习行为</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="card" style="width: 10rem;box-shadow: #C4D8F5 1px 1px 2px 0">
+                            <div class="card-body">
+                                <h5 class="card-title"><b>良好</b></h5>
+                                {#                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>#}
+                                <p class="card-text">学习行为</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="card" style="width: 10rem;box-shadow: #C4D8F5 1px 1px 2px 0">
+                            <div class="card-body">
+                                <h5 class="card-title"><b>良好</b></h5>
+                                {#                                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>#}
+                                <p class="card-text">学习行为</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 学习行为 -->
+        <div class="row">
+            <div class="col-12">
+                <div class="row" style="margin-top: 10px">
+                    <div class="col-1" style="width: 10px">
+                        <div style="width: 4px;height:100%;background-color: #0d6efd;display: inline-block;"></div>
+                    </div>
+                    <div class="col-11">
+                        <h6 style="color:#0d6efd;display: inline;"><b>学习行为</b></h6><span style="font-size: 12px">(查看评价标准)</span>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 10px;padding: 10px">
+                    <div class="col-4" style="background-color: white;">
+                        <div id="main" style="width: 100%;height: 410px;box-shadow: #C4D8F5 1px 1px 2px 0;"></div>
+                    </div>
+                    <div class="col-4" style="background-color: white;">
+                        <div id="main1" style="width: 100%;height: 410px;box-shadow: #C4D8F5 1px 1px 2px 0;"></div>
+                    </div>
+                    <div class="col-4" style="background-color: white;">
+                        <div id="main2" style="width: 100%;height: 410px;box-shadow: #C4D8F5 1px 1px 2px 0;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 学习行为 -->
+        <div class="row">
+            <div class="col-12">
+                <div class="row" style="margin-top: 10px">
+                    <div class="col-1" style="width: 10px">
+                        <div style="width: 4px;height:100%;background-color: #0d6efd;display: inline-block;"></div>
+                    </div>
+                    <div class="col-11">
+                        <h6 style="color:#0d6efd;display: inline;"><b>教师寄语</b></h6>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 10px;padding: 10px">
+                    <div class="col-10 offset-1">
+                        <p>张金艳老师结合AI老师的建议，想和同学说：</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-10 offset-1" style="background-color: #DBE9FD;border-radius: 20px">
+                        <div class="row">
+                            <div class="col-1 offset-1">
+                                <img src="{% static 'img/icons/quote.svg' %}" style="width: 50px">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-10 offset-1" style="line-height: 50px;height: 150px;text-align: center;padding: 50px;">
+                                <h6 style="line-height: 1.5;display: inline-block;vertical-align: middle;color: #1F63FF">
+                                    <b>所有学习任务尚未完成，态度决定一切，坚持就是胜利，课中讲解知识点仍需巩固学习，请及时观看课程，按时完成并认真对待作业是一种优秀的学习手段，加油哦~</b>
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-1 offset-10">
+                                <img src="{% static 'img/icons/quote.svg' %}" style="width: 50px;transform: rotate(180deg)">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script>
+        var myChart = echarts.init(document.getElementById('main'));
+        var myChart1 = echarts.init(document.getElementById('main1'));
+        var myChart2 = echarts.init(document.getElementById('main2'));
+
+        option = {
+            title: {
+                text: "上课出勤情况（近7日）"
+            },
+            xAxis: {
+                data: ['A', 'B', 'C', 'D', 'E']
+            },
+            yAxis: {},
+            series: [
+                {
+                    data: [10, 22, 28, 23, 19],
+                    type: 'line',
+                    smooth: true
+                }
+            ]
+        };
+
+        option1 = {
+            title: {
+                text: "上课互动次数（近7日）"
+            },
+            xAxis: {
+                data: ['A', 'B', 'C', 'D', 'E']
+            },
+            yAxis: {},
+            series: [
+                {
+                    type: 'bar',
+                    data: [
+                        10,
+                        22,
+                        28,
+                        {
+                            value: 43,
+                            // 设置单个柱子的样式
+                            itemStyle: {
+                                color: '#91cc75',
+                                shadowColor: '#91cc75',
+                                borderType: 'dashed',
+                                opacity: 0.5
+                            }
+                        },
+                        49
+                    ],
+                    itemStyle: {
+                        barBorderRadius: 5,
+                        borderWidth: 1,
+                        borderType: 'solid',
+                        borderColor: '#73c0de',
+                        shadowColor: '#5470c6',
+                        shadowBlur: 3
+                    }
+                }
+            ]
+        };
+
+        option2 = {
+            title: {
+                text: "上课互动类型（近7日）"
+            },
+            xAxis: {},
+            yAxis: {
+                data: ['A', 'B', 'C', 'D', 'E']
+            },
+            series: [
+                {
+                    type: 'bar',
+                    data: [
+                        10,
+                        22,
+                        28,
+                        {
+                            value: 43,
+                            // 设置单个柱子的样式
+                            itemStyle: {
+                                color: '#91cc75',
+                                shadowColor: '#91cc75',
+                                borderType: 'dashed',
+                                opacity: 0.5
+                            }
+                        },
+                        49
+                    ],
+                    itemStyle: {
+                        barBorderRadius: 5,
+                        borderWidth: 1,
+                        borderType: 'solid',
+                        borderColor: '#73c0de',
+                        shadowColor: '#5470c6',
+                        shadowBlur: 3
+                    }
+                }
+            ]
+        };
+
+        option3 = {
+            title: {
+                text: "上课出勤情况（近7日）",
+                x: 'center',
+                textStyle: {
+                    color: '#91cc75'
+                },
+                subtext: "{a|注意：近4天出勤率未达100%，点击查看未出勤学生名单}",
+                subtextStyle: {
+                    fontWeight: "bolder",
+                    fontFamily: "Arial",
+                    fontSize: 12,
+                    sublink: '#',
+                    subtarget: 'self',
+                    rich: {
+                        a: {
+                            backgroundColor: '#91cc75',
+                        }
+                    }
+                },
+                {#backgroundColor: '#F9D7D9'#}
+            },
+            textStyle: {//主标题文本样式{"fontSize": 18,"fontWeight": "bolder","color": "#333"}
+                fontStyle: 'normal',
+                fontWeight: 'normal',
+            },
+
+            legend: {
+                orient: 'horizontal',
+                x: 'center',
+                y: 'bottom',
+                itemGap: 40,
+                itemHeight: 5,
+                data: [{
+                    name: '实到人数',
+                    textStyle: {fontWeight: 'bold', color: 'black'}
+                }]
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            xAxis: {
+                data: ['A', 'B', 'C', 'D', 'E']
+            },
+            yAxis: {},
+            series: [
+                {
+                    name: '实到人数',
+                    data: [10, 22, 28, 23, 19],
+                    type: 'line',
+                    smooth: true
+                }
+            ]
+        };
+
+        myChart.setOption(option);
+        myChart1.setOption(option1);
+        myChart2.setOption(option2);
+    </script>
+
+{% endblock %}

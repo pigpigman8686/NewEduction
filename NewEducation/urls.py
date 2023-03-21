@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', IndexPageViews.index),
     path('learning_condition/', LearningConditionViews.portrait),
+    path('course/', LearningConditionViews.course),
     path('teaching_data/', TeachingDataViews.catalog),
     path('teaching_result/', TeachingResultViews.analyse),
 ]
