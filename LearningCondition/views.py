@@ -13,7 +13,15 @@ from django.db.models.functions import Cast
 
 def course(request):
 
-    return render(request, 'Courses.html')
+    return render(request, 'Student/Courses.html')
+
+def course_resource(request):
+
+    return render(request, 'Student/CourseResources.html')
+
+def path_plan(request):
+
+    return render(request, 'Student/PathPlan.html')
 
 def portrait(request):
     message = {}
