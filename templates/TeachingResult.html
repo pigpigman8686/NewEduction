@@ -1,4 +1,4 @@
-{% extends 'component/Layout.html' %}
+{% extends 'component/LayoutSuper.html' %}
 {% load static %}
 {% block head %}
 <link href="{% static 'css/custom/component/TeachingResult.css' %}">
@@ -321,35 +321,37 @@
                 fontStyle: 'normal',
                 fontWeight: 'normal',
             },
-            legend: {
-                orient: 'horizontal',
-                x:'center',
-                y:'bottom',
-                itemGap: 40,
-                itemHeight: 5,
-                data:[{
-                name: '实到人数',
-                textStyle: {fontWeight: 'bold', color: 'black'}
-                }]
-            },
             tooltip : {
             trigger: 'item',
             formatter: "{a} <br/>{b} : {c} ({d}%)"
             },
-            xAxis: {
-                data: ['A', 'B', 'C', 'D', 'E']
+            grid : {
+                top : '20%',
+				bottom : '10%'
+			},
+            legend: {
+                orient: 'horizontal',
+                x:'center',
+                y:'bottom',
+                data:['实到人数','应到人数']
             },
-            yAxis: {},
-            series: [
-                {
+            xAxis: {
+                data: ["3.1","3.2","3.3","3.4","3.5","3.6"]
+            },
+            yAxis: {
+                data1: ["30","60","90","120","150"]
+            },
+            series: [{
                 name: '实到人数',
-                    data: [10, 22, 28, 23, 19],
-                    type: 'line',
-                    smooth: true
-                }
-            ]
+                type: 'line',
+                data: [97, 130, 130, 95, 101, 105]
+            },
+            {
+                name: '应到人数',
+                type: 'line',
+                data: [130, 130, 130, 130, 130, 130]
+            }]
         };
-
         option1 = {
             title: {
                 text: "上课互动次数（近7日）",
@@ -385,8 +387,12 @@
             trigger: 'item',
             formatter: "{a} <br/>{b} : {c} ({d}%)"
             },
+            grid : {
+                top : '20%',
+				bottom : '10%'
+			},
             xAxis: {
-                data: ['A', 'B', 'C', 'D', 'E']
+                data: ["3.1","3.2","3.3","3.4","3.5","3.6"]
             },
             yAxis: {},
             series: [
@@ -445,6 +451,10 @@
             trigger: 'item',
             formatter: "{a} <br/>{b} : {c} ({d}%)"
             },
+            grid : {
+                top : '20%',
+				bottom : '10%'
+			},
             xAxis: {
 
             },

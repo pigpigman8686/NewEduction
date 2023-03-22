@@ -1,0 +1,89 @@
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/custom/component/Layout.css' %}"/>
+{#    <script src="{% static 'js/bootstrap.min.js' %}" type="text/javascript" charset="utf-8"></script>#}
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}" type="text/javascript" charset="utf-8"></script>
+    <script src="{% static 'js/echarts.min.js' %}" type="text/javascript" charset="utf-8"></script>
+    {% block head %}
+    {% endblock %}
+</head>
+
+<body style="background-color: #f5f6f9">
+<nav class="navbar navbar-expand-lg bg-light fixed-top">
+
+    <div class="container-fluid nav_contain">
+        <a class="navbar-brand" href="http://127.0.0.1:8000/index/">
+            <img src="{% static 'img/icons/safe.svg' %}" alt="Logo" width="30" height="24"
+                 class="d-inline-block align-text-top">
+            <b>知学智评促教</b>
+        </a>
+        <button class="navbar-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggle-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        <img src="{% static 'img/icons/house-door.svg' %}" alt="Logo" width="15" height="15">
+                        <b>学计划</b>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        <img src="{% static 'img/icons/人像.svg' %}" alt="Logo" width="15" height="15">
+                        <b>看画像</b>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false" style="background:#E6F7FF">
+                        <img src="{% static 'img/icons/课程.svg' %}" alt="Logo" width="15" height="15">
+                        <b style="color:#165DFF;">看课程</b>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false">
+                        <img src="{% static 'img/icons/资源.svg' %}" alt="Logo" width="15" height="15">
+                        <b>找资源</b>
+                    </a>
+                </li>
+            </ul>
+
+            <a class="navbar-brand" href="#">
+                <img src="{% static 'img/icons/铃铛.png' %}" alt="Logo" width="30" height="30"
+                     class="d-inline-block align-text-top">
+            </a>
+            您好，毛浩地
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                       aria-expanded="false" style="color:#101010">
+                        学生
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">管理员</a></li>
+                        <li><a class="dropdown-item" href="#">教师</a></li>
+                        <li><a class="dropdown-item" href="http://127.0.0.1:8000/course">学生</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <a href="#">
+                <img src="{% static 'img/icons/设置.png' %}" alt="Logo" width="30" height="30"
+                     class="d-inline-block align-text-top">
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+{% block content %}{% endblock %}
+
+</body>
