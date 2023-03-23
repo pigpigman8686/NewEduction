@@ -75,7 +75,7 @@
         <br>
         <div class="row text-center">
             <div class="col-12">
-                <h5 style="margin-top: 10px color:#101010;"><b>2022-2023学年第1学期--《数据结构》课程分析报告</b></h5>
+                <h5 style="margin-top: 10px;color:#101010;"><b>2022-2023学年第1学期--《数据结构》课程分析报告</b></h5>
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                        aria-expanded="false" style="color:#165DFF;display: inline;margin-left: 1300px;">
                         切换课程
@@ -281,7 +281,22 @@
 
         option = {
             title : {
-                text : ""
+                text : "学习时长分析（近七日）",
+                left: 'center',
+                subtext: "{a|日均学习时长超过同课程 75% 学生，请继续保持！}",
+                subtextStyle: {
+                    rich: {
+                        a: {
+                             backgroundColor: '#BCEBDC',
+                             color:'black',
+                             fontWeight: "800",
+                             fontFamily: "Arial",
+                             height: 26,
+                             width:420,
+                             fontSize: 16
+                            }
+                          }
+                }
             },
             toolbox: {
             show : false,
@@ -300,40 +315,35 @@
                 type : 'shadow' // 默认为直线，可选为：'line' | 'shadow'
             }
             },
+            grid : {
+                top : '20%',
+				bottom : '10%'
+			},
             legend: {
-            data:['蒸发量','降水量','平均温度']
+                x:'center',
+                y:'bottom',
+            data:['我的学习时长','课程平均值']
             },
             xAxis : [
             {
             type : 'category',
-            data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
+            data: ["3.1","3.2","3.3","3.4","3.5","3.6"]
             }
             ],
-            yAxis : [
-            {
-            type : 'value',
-            name : '水量ml'
-            }],
+            yAxis : {},
             series : [
             {
-            name:'蒸发量',
+            name:'我的学习时长',
             type:'bar',
             stack: '总量',
             itemStyle : { normal: {label : {show: false, position: 'insideRight'}}},
-            data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
+            data:[ 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
             },
             {
-            name:'降水量',
-            type:'bar',
-            stack: '总量',
-            itemStyle : { normal: {label : {show: false, position: 'insideRight'}}},
-            data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
-            },
-            {
-            name:'平均温度',
+            name:'课程平均值',
             type:'line',
             yAxisIndex: 0,
-            data:[4.6, 10.8, 16, 49.6, 54.3, 147.4, 311.2, 344.4,81.3, 38.8, 12.4, 5.6]
+            data:[ 147.4, 311.2, 344.4,81.3, 38.8, 12.4, 5.6]
             }]
         };
 
@@ -381,8 +391,6 @@
                 text: "学习讨论分析",
                 left: 'center',
                 subtext: "{a|日均讨论次数超过同课程15%学生，请继续加油！}",
-                sublink: '#',
-                subtarget: 'self',
                 subtextStyle: {
                     rich: {
                         a: {
@@ -390,9 +398,9 @@
                              color:'black',
                              fontWeight: "600",
                              fontFamily: "Arial",
-                             height: 22,
-                             width:380,
-                             fontSize: 14
+                             height: 26,
+                             width:420,
+                             fontSize: 16
                             }
                           }
                 }
@@ -401,14 +409,27 @@
                 fontStyle: 'normal',
                 fontWeight: 'normal',
             },
-            tooltip : {
-            trigger: 'item',
-            formatter: "{a} <br/>{b} : {c} ({d}%)"
-            },
-            grid : {
-                top : '20%',
-				bottom : '10%'
-			},
+            toolbox: {
+                                        show: false,
+                                        feature: {
+                                            mark: {show: true},
+                                            dataView: {show: true, readOnly: false},
+                                            magicType: {show: true, type: ['line', 'bar']},
+                                            restore: {show: true},
+                                            saveAsImage: {show: true}
+                                        }
+                                    },
+                                    tooltip: {
+                                        trigger: 'axis',
+                                        showDelay: 0, // 显示延迟，添加显示延迟可以避免频繁切换，单位ms
+                                        axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                                            type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+                                        }
+                                    },
+                                    grid: {
+                                        top: '20%',
+                                        bottom: '10%'
+                                    },
             legend: {
                 orient: 'horizontal',
                 x:'center',
@@ -442,58 +463,125 @@
 
         option3 = {
             title: {
-                text: "上课出勤情况（近7日）"
+                text: "上课出勤情况（近七日）     实出勤数/应出勤数 ：9/10",
+                left: 'center',
+                subtext: "{a|日均出勤次数超过同课程 75% 学生，请继续保持！}",
+                subtextStyle: {
+                    rich: {
+                        a: {
+                             backgroundColor: '#BCEBDC',
+                             color:'black',
+                             fontWeight: "600",
+                             fontFamily: "Arial",
+                             height: 26,
+                             width:420,
+                             fontSize: 16
+                            }
+                          }
+                }
+            },
+            textStyle: {
+                fontStyle: 'normal',
+                fontWeight: 'normal',
+            },
+            tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            grid : {
+                top : '20%',
+				bottom : '10%'
+			},
+            legend: {
+                orient: 'horizontal',
+                x:'center',
+                y:'bottom',
+                data:['我的出勤数','应出勤数']
             },
             xAxis: {
-                data: ['A', 'B', 'C', 'D', 'E']
+                data: ["3.1","3.2","3.3","3.4","3.5","3.6"]
             },
-            yAxis: {},
-            series: [
-                {
-                    data: [10, 22, 28, 23, 19],
-                    type: 'line',
-                    smooth: true
-                }
-            ]
+            yAxis: {
+                data1: ["0.2","0.4","0.6","0.8","1"]
+            },
+            series: [{
+                name: '我的出勤数',
+                type: 'line',
+                data: [1,1,1,0,1,1,]
+            },
+            {
+                name: '应出勤数',
+                type: 'line',
+                data: [1,1,1,1,1,1]
+            }]
         };
 
         option4 = {
-            title: {
-                text: "上课互动次数（近7日）"
-            },
-            xAxis: {
-                data: ['A', 'B', 'C', 'D', 'E']
-            },
-            yAxis: {},
-            series: [
-                {
-                    type: 'bar',
-                    data: [
-                        10,
-                        22,
-                        28,
-                        {
-                            value: 43,
-                            // 设置单个柱子的样式
-                            itemStyle: {
-                                color: '#91cc75',
-                                shadowColor: '#91cc75',
-                                borderType: 'dashed',
-                                opacity: 0.5
+            title : {
+                text : "上课互动次数（近七日）",
+                left: 'center',
+                subtext: "{a|日均互动次数超过同课程 75% 学生，请继续保持！}",
+                subtextStyle: {
+                    rich: {
+                        a: {
+                             backgroundColor: '#BCEBDC',
+                             color:'black',
+                             fontWeight: "800",
+                             fontFamily: "Arial",
+                             height: 26,
+                             width:420,
+                             fontSize: 16
                             }
-                        },
-                        49
-                    ],
-                    itemStyle: {
-                        barBorderRadius: 5,
-                        borderWidth: 1,
-                        borderType: 'solid',
-                        borderColor: '#73c0de',
-                        shadowColor: '#5470c6',
-                        shadowBlur: 3
-                    }
+                          }
                 }
-            ]
+            },
+            toolbox: {
+            show : false,
+            feature : {
+            mark : {show: true},
+                dataView : {show: true, readOnly: false},
+                magicType: {show: true, type: ['line', 'bar']},
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+            },
+            tooltip : {
+                trigger : 'axis',
+                showDelay : 0, // 显示延迟，添加显示延迟可以避免频繁切换，单位ms
+                axisPointer : { // 坐标轴指示器，坐标轴触发有效
+                type : 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+            }
+            },
+            grid : {
+                top : '20%',
+				bottom : '10%'
+			},
+            legend: {
+                x:'center',
+                y:'bottom',
+            data:['我的互动次数','课程平均值']
+            },
+            xAxis : [
+            {
+            type : 'category',
+            data: ["3.1","3.2","3.3","3.4","3.5","3.6"]
+            }
+            ],
+            yAxis : {},
+            series : [
+            {
+            name:'我的学习互动次数',
+            type:'bar',
+            stack: '总量',
+            itemStyle : { normal: {label : {show: false, position: 'insideRight'}}},
+            data:[ 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
+            },
+            {
+            name:'课程平均值',
+            type:'line',
+            yAxisIndex: 0,
+            data:[ 147.4, 311.2, 344.4,81.3, 38.8, 12.4, 5.6]
+            }]
         };
 
         option5 = {
@@ -543,48 +631,9 @@
 
         option7 = {
             title: {
-                text: "上课互动次数（近7日）"
-            },
-            xAxis: {
-                data: ['A', 'B', 'C', 'D', 'E']
-            },
-            yAxis: {},
-            series: [
-                {
-                    type: 'bar',
-                    data: [
-                        10,
-                        22,
-                        28,
-                        {
-                            value: 43,
-                            // 设置单个柱子的样式
-                            itemStyle: {
-                                color: '#91cc75',
-                                shadowColor: '#91cc75',
-                                borderType: 'dashed',
-                                opacity: 0.5
-                            }
-                        },
-                        49
-                    ],
-                    itemStyle: {
-                        barBorderRadius: 5,
-                        borderWidth: 1,
-                        borderType: 'solid',
-                        borderColor: '#73c0de',
-                        shadowColor: '#5470c6',
-                        shadowBlur: 3
-                    }
-                }
-            ]
-        };
-
-        option8 = {
-        title: [{
-                text: "任务点完成分布（近7日）",
+                text: "作业完成分布（近七日）         总完成次数：65次",
                 left: 'center',
-                subtext: "{a|任务点完成率超同课程18%学生，请继续加油！}",
+                subtext: "{a|作业完成率超过同课程 20% 学生，请继续加油！}",
                 subtextStyle: {
                     rich: {
                         a: {
@@ -592,59 +641,143 @@
                              color:'black',
                              fontWeight: "600",
                              fontFamily: "Arial",
-                             height: 22,
-                             width:380,
-                             fontSize: 14
+                             height: 26,
+                             width:420,
+                             fontSize: 16
                             }
                           }
                 }
+            },
+            toolbox: {
+            show : false,
+            feature : {
+            mark : {show: true},
+                dataView : {show: true, readOnly: false},
+                magicType: {show: true, type: ['line', 'bar']},
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+            },
+            tooltip : {
+                trigger : 'axis',
+                showDelay : 0, // 显示延迟，添加显示延迟可以避免频繁切换，单位ms
+                axisPointer : { // 坐标轴指示器，坐标轴触发有效
+                type : 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+            }
+            },
+            grid : {
+                top : '20%',
+				bottom : '10%'
+			},
+            legend: {
+                x:'center',
+                y:'bottom',
+            data:['我的完成率','课程平均值']
+            },
+            xAxis : [
+            {
+            type : 'category',
+            data: ["3.1","3.2","3.3","3.4","3.5","3.6"]
+            }
+            ],
+            yAxis : {
+                data1: ["20%","40%","60%","80%","100%","120%"]
+            },
+            series : [
+            {
+            name:'我的完成率',
+            type:'line',
+            stack: '总量',
+            itemStyle : { normal: {label : {show: false, position: 'insideRight'}}},
+            data:[0.6,0.45,0.9,0.6,0.8,0.49,0.4]
             },
             {
-                text: "任务点已完成/任务点应完成：18/50",
-                left:'center',
-                textStyle:{
-                color:'#4082FA',
+            name:'课程平均值',
+            type:'line',
+            yAxisIndex: 0,
+            data:[1,1.11,1.2,0.8,1.18,0.79,0.8]
+            }]
+        };
 
-                }
-            },
-        {
-            text: '达标率\n',
-            textStyle:{
-                    color:'#4082FA',
-                    fontSize: 12
-                    },
-            subtext:"{a|41.74%}",
-            subtextStyle: {
+        option8 = {
+            title: [{
+                text: "任务点完成分布（近7日）",
+                left: 'center',
+                subtext: "{a|任务点完成率超同课程18%学生，请继续加油！}",
+                subtextStyle: {
                     rich: {
                         a: {
-                             color:'#4082FA',
-                             fontWeight: "600",
-                             fontFamily: "Arial",
-                             fontSize: 28
-                            }
-                          }
-                },
-            left: 'center',
-            top: 'center'
-        }],
-        tooltip : {
-            trigger: 'item',
-            formatter: "{a} <br/>{b} : {c} ({d}%)"
+                            backgroundColor: '#f9d7d9',
+                            color: 'black',
+                            fontWeight: "600",
+                            fontFamily: "Arial",
+                            height: 26,
+                            width: 420,
+                            fontSize: 16
+                        }
+                    }
+                }
             },
-        //图例，每个图表最多仅有一个图例
-        legend: {
-            orient: 'vertical',
-            left: 'left',
-            data: ['第一部分','第二部分']
-        },
+                {
+                    text: "任务点已完成/任务点应完成：18/50",
+                    left: 'center',
+                    top: '20%',
+                    textStyle: {
+                        color: '#4082FA'
+                    }
+                },
+                {
+                    text: '达标率\n',
+                    left: 'center',
+                    top: '50%',
+                    textStyle: {
+                        color: '#4082FA',
+                        fontSize: 16
+                    },
+                    subtext: "{a|41.74%}",
+                    subtextStyle: {
+                        rich: {
+                            a: {
+                                color: '#4082FA',
+                                fontWeight: "600",
+                                fontFamily: "Arial",
+                                fontSize: 28
+                            }
+                        }
+                    }
+                }],
+        toolbox: {
+            show : false,
+            feature : {
+            mark : {show: true},
+                dataView : {show: true, readOnly: false},
+                magicType: {show: true, type: ['line', 'bar']},
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+            },
+            tooltip : {
+                trigger : 'axis',
+                showDelay : 0, // 显示延迟，添加显示延迟可以避免频繁切换，单位ms
+                axisPointer : { // 坐标轴指示器，坐标轴触发有效
+                type : 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+            }
+            },
+            grid : {
+                top : '20%',
+				bottom : '10%'
+			},
+        color: ['#f9c956', '#75bedc'],
         series: [
             {
                 type: 'pie',
                 data: [
                     {
+                        name:'文档类',
                         value: 18
                     },
                     {
+                        name:'视频类',
                         value: 50
                     }
                 ],

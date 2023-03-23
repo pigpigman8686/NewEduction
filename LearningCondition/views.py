@@ -12,8 +12,8 @@ from django.db.models.functions import Cast
 
 
 def course(request):
-
-    return render(request, 'Student/Courses.html')
+    dict = {"name": "1zh"}
+    return render(request, 'Student/Courses.html', dict)
 
 
 def course_resource(request):
