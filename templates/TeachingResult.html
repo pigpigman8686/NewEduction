@@ -3,7 +3,7 @@
 {% block head %}
 <link href="{% static 'css/custom/component/TeachingResult.css' %}">
 {% endblock %}
-
+<!--学习效果分析-->
 {% block content %}
 
     <div class="container-fluid" style="margin-top: 70px;margin-left: 20px;margin-right: 20px;width: auto">
@@ -1074,68 +1074,85 @@
                             var myChart1 = echarts.init(document.getElementById('main10'));
                             var myChart2 = echarts.init(document.getElementById('main11'));
 
-                            option9 = {
-                                title: {
-                                    text: "作业完成分布（近7日）",
-                                    left: 'center',
-                                    subtext: "{a|注意：未完成人数较多，点击查看未出勤学生名单}",
-                                    sublink: '#',
-                                    subtarget: 'self',
-                                    subtextStyle: {
-                                        rich: {
-                                            a: {
-                                                backgroundColor: '#f9d7d9',
-                                                color: 'black',
-                                                fontWeight: "600",
-                                                fontFamily: "Arial",
-                                                height: 26,
-                                                width: 420,
-                                                fontSize: 16
-                                            }
+
+
+
+
+
+                        option9 = {
+                            title: {
+
+                                text: "作业完成分布（近7日）",
+                                left: 'center',
+                                subtext: "{a|注意：未完成人数较多，点击查看未出勤学生名单}",
+                                sublink: '#',
+                                subtarget: 'self',
+                                subtextStyle: {
+                                    rich: {
+                                        a: {
+                                            backgroundColor: '#f9d7d9',
+                                            color: 'black',
+                                            fontWeight: "600",
+                                            fontFamily: "Arial",
+                                            height: 26,
+                                            width: 420,
+                                            fontSize: 16
                                         }
-                                    },
-                                },
-                                xAxis: {
-                                    data: ["3.1", "3.2", "3.3", "3.4", "3.5", "3.6"]
-                                },
-                                yAxis: {
-                                    data1: ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6"]
-                                },
-                                toolbox: {
-                                    show: false,
-                                    feature: {
-                                        mark: {show: true},
-                                        dataView: {show: true, readOnly: false},
-                                        magicType: {show: true, type: ['line', 'bar']},
-                                        restore: {show: true},
-                                        saveAsImage: {show: true}
                                     }
                                 },
-                                tooltip: {
-                                    trigger: 'axis',
-                                    showDelay: 0, // 显示延迟，添加显示延迟可以避免频繁切换，单位ms
-                                    axisPointer: { // 坐标轴指示器，坐标轴触发有效
-                                        type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
-                                    }
-                                },
-                                grid: {
-                                    top: '20%',
-                                    bottom: '10%'
-                                },
-                                legend: {
-                                    orient: 'horizontal',
-                                    x: 'center',
-                                    y: 'bottom',
-                                    data: ['完成率']
-                                },
-                                series: [
-                                    {
-                                        name: '完成率',
-                                        data: [0.6, 0.5, 0.59, 0.4, 0.1, 0.15, 0.2],
-                                        type: 'line',
-                                        smooth: true
-                                    }]
-                            };
+                            },
+                            xAxis: {
+                                data: [
+
+                                    {% for key,value in lesson_work_post.0.items %}
+                                        '{{ key }}',
+                                    {% endfor %}
+
+
+                            },
+
+                            yAxis: {
+                                data: ["0.2", "0.4", "0.6", "0.8", "1.0"],
+                            },
+                            toolbox: {
+                                show: false,
+                                feature: {
+                                    mark: {show: true},
+                                    dataView: {show: true, readOnly: false},
+                                    magicType: {show: true, type: ['line', 'bar']},
+                                    restore: {show: true},
+                                    saveAsImage: {show: true}
+                                }
+                            },
+                            tooltip: {
+                                trigger: 'axis',
+                                showDelay: 0, // 显示延迟，添加显示延迟可以避免频繁切换，单位ms
+                                axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                                    type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+                                }
+                            },
+
+                            grid: {
+                                top: '20%',
+                                bottom: '10%'
+                            },
+                            legend: {
+                                orient: 'horizontal',
+                                x: 'center',
+                                y: 'bottom',
+                                data: ['完成率']
+                            },
+                            series: [
+                                {
+                                    name: '完成率',
+                                    data: [
+                                    {% for key,value in lesson_work_post.0.items %}
+                                        {{ value }},
+                                    {% endfor %}],
+                                    type: 'line',
+                                    smooth: true
+                                }]
+                        };
 
                             option10 = {
                                 title: [{
@@ -1227,10 +1244,10 @@
                                         type: 'pie',
                                         data: [
                                             {
-                                                value: 18
+                                                value: {{job_finish_all.job_should_finish}}
                                             },
                                             {
-                                                value: 50
+                                                value: {{job_finish_all.job_finish}}
                                             }
                                         ],
                                         radius: ['45%', '60%'],
@@ -1290,10 +1307,10 @@
                                         type: 'pie',
                                         data: [
                                             {
-                                                value: 10
+                                                value: {{lesson_job_like.WorkAttachment}},
                                             },
                                             {
-                                                value: 90
+                                                value: {{lesson_job_like.VideoAttachment}},
                                             }
                                         ],
                                         radius: ['0', '60%'],
@@ -1407,7 +1424,14 @@
                                         target: 'self',
                                 }],
                                     xAxis: {
-                                        data: ["期末", "测试题", "期末", "测试题", "期末", "测试题"]
+
+                                        data: [{% for key,value in std_exam_score_nan_du.items %}
+                                                    '{{ key }}',
+                                                     {% endfor %}
+                                        ]
+
+
+
                                     },
                                     yAxis: {
                                         data1: ["0.2", "0.4", "0.6", "0.8", "1"]
