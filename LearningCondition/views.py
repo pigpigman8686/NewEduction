@@ -64,6 +64,8 @@ def jsontest(request):
         lesson_work_post_all_in_all.append(lesson_work_post1)
 
 
+
+
     #近七天加这段：     .filter(insert_time__gte=start_date, insert_time__lte=end_date)\
 
     # 作业完成分布(教师)

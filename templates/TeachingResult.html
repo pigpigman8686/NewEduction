@@ -1104,9 +1104,13 @@
                             xAxis: {
                                 data: [
 
-                                    {% for key,value in lesson_work_post.0.items %}
-                                        '{{ key }}',
-                                    {% endfor %}
+                                        {% for key,value in lesson_work_post.0.items %}
+                                            '{{ key }}',
+                                        {% endfor %},
+                                {% for key,value in lesson_work_post.1.items %}
+                                            '{{ key }}',
+                                        {% endfor %},
+                                ]
 
 
                             },
@@ -1151,7 +1155,17 @@
                                     {% endfor %}],
                                     type: 'line',
                                     smooth: true
-                                }]
+                                },
+                                {
+                                    name: '完成率2',
+                                    data: [
+                                    {% for key,value in lesson_work_post.1.items %}
+                                        {{ value }},
+                                    {% endfor %}],
+                                    type: 'line',
+                                    smooth: true
+                                },
+                                ]
                         };
 
                             option10 = {
@@ -1199,6 +1213,7 @@
                                             color: '#4082FA',
                                             fontSize: 16
                                         },
+
                                         subtext: "{a|41.74%}",
                                         subtextStyle: {
                                             rich: {
@@ -1424,13 +1439,12 @@
                                         target: 'self',
                                 }],
                                     xAxis: {
-
-                                        data: [{% for key,value in std_exam_score_nan_du.items %}
-                                                    '{{ key }}',
-                                                     {% endfor %}
-                                        ]
-
-
+                                        data:   [
+                                                {% for key,value in std_exam_score_nan_du.items %}
+                                                        {% if value != std_exam_score_nan_du.avg_score%}
+                                                            '{{ key }}',
+                                                        {% endif %}
+                                            {% endfor %}],
 
                                     },
                                     yAxis: {
@@ -1525,7 +1539,16 @@
                                     },
                                     {
                                         name: '难度系数',
-                                        data: [0.66, 0.7, 0.8, 0.7, 0.88, 0.2, 0.5],
+                                    {#    data: [{% for key,value in std_exam_score_nan_du.items %}#}
+                                    {#    '{{ value }}',#}
+                                    {#{% endfor %}],#}
+                                        data: [
+                                                {% for key,value in std_exam_score_nan_du.items %}
+                                                        {% if value != std_exam_score_nan_du.avg_score%}
+                                                            '{{ value }}',
+                                                        {% endif %}
+                                            {% endfor %}],
+
                                         type: 'line'
                                     }],
                                 };
@@ -1747,6 +1770,7 @@
                             myChart.setOption(option15);
                             myChart1.setOption(option16);
                             myChart2.setOption(option17);
+
                         </script>
                     </div>
                 </div>

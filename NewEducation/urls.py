@@ -29,4 +29,6 @@ urlpatterns = [
     path('path_plan/', LearningConditionViews.path_plan),
     path('teaching_data/', TeachingDataViews.catalog),
     path('teaching_result/', TeachingResultViews.analyse),
+    path('jsontest/', LearningConditionViews.jsontest)
+
 ]
