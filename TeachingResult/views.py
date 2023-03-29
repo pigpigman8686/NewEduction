@@ -88,7 +88,4 @@ def analyse(request):
         }
     }
 
-
-
-
     return render(request, 'TeachingResult.html', message)

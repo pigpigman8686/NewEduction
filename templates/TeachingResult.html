@@ -375,231 +375,231 @@
             <!-- 教学质量评估 -->
 
 
-                        <script type="text/javascript">
-                            // 基于准备好的dom，初始化echarts实例
-                            var myChart = echarts.init(document.getElementById('main'));
-                            var myChart1 = echarts.init(document.getElementById('main1'));
-                            var myChart2 = echarts.init(document.getElementById('main2'));
-                            // 指定图表的配置项和数据
-                            option = {
-                                title: {
-                                    text: "上课出勤情况（近7日）",
-                                    left: 'center',
-                                    subtext: "{a|注意：近4天出勤率未达100%，点击查看未出勤学生名单}",
-                                    sublink: '#',
-                                    subtarget: 'self',
-                                    subtextStyle: {
-                                        rich: {
-                                            a: {
-                                                backgroundColor: '#f9d7d9',
-                                                color: 'black',
-                                                fontWeight: "600",
-                                                fontFamily: "Arial",
-                                                height: 26,
-                                                width: 420,
-                                                fontSize: 16
-                                            }
-                                        }
-                                    }
-                                },
-                                textStyle: {
-                                    fontStyle: 'normal',
-                                    fontWeight: 'normal',
-                                },
-                                tooltip: {
-                                    trigger: 'item',
-                                    formatter: "{a} <br/>{b} : {c} ({d}%)"
-                                },
-                                color: ['#4B90F4', '#84B7F9'],
-                                grid: {
-                                    top: '20%',
-                                    bottom: '10%'
-                                },
-                                legend: {
-                                    orient: 'horizontal',
-                                    x: 'center',
-                                    y: 'bottom',
-                                    data: ['实到人数', '应到人数']
-                                },
-                                xAxis: {
-                                    data: ["3.1", "3.2", "3.3", "3.4", "3.5", "3.6"]
-                                },
-                                yAxis: {
-                                    data1: ["30", "60", "90", "120", "150"]
-                                },
-                                series: [{
-                                    name: '实到人数',
-                                    type: 'line',
-                                    data: [97, 130, 130, 95, 101, 105],
-                                    smooth: true
-                                },
-                                    {
-                                        name: '应到人数',
-                                        type: 'line',
-                                        data: [130, 130, 130, 130, 130, 130],
-                                        smooth: true,
-                                    }]
-                            };
+                                    <script type="text/javascript">
+                                        // 基于准备好的dom，初始化echarts实例
+                                        var myChart = echarts.init(document.getElementById('main'));
+                                        var myChart1 = echarts.init(document.getElementById('main1'));
+                                        var myChart2 = echarts.init(document.getElementById('main2'));
+                                        // 指定图表的配置项和数据
+                                        option = {
+                                            title: {
+                                                text: "上课出勤情况（近7日）",
+                                                left: 'center',
+                                                subtext: "{a|注意：近4天出勤率未达100%，点击查看未出勤学生名单}",
+                                                sublink: '#',
+                                                subtarget: 'self',
+                                                subtextStyle: {
+                                                    rich: {
+                                                        a: {
+                                                            backgroundColor: '#f9d7d9',
+                                                            color: 'black',
+                                                            fontWeight: "600",
+                                                            fontFamily: "Arial",
+                                                            height: 26,
+                                                            width: 420,
+                                                            fontSize: 16
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            textStyle: {
+                                                fontStyle: 'normal',
+                                                fontWeight: 'normal',
+                                            },
+                                            tooltip: {
+                                                trigger: 'item',
+                                                formatter: "{a} <br/>{b} : {c} ({d}%)"
+                                            },
+                                            color: ['#4B90F4', '#84B7F9'],
+                                            grid: {
+                                                top: '20%',
+                                                bottom: '10%'
+                                            },
+                                            legend: {
+                                                orient: 'horizontal',
+                                                x: 'center',
+                                                y: 'bottom',
+                                                data: ['实到人数', '应到人数']
+                                            },
+                                            xAxis: {
+                                                data: ["3.1", "3.2", "3.3", "3.4", "3.5", "3.6"]
+                                            },
+                                            yAxis: {
+                                                data1: ["30", "60", "90", "120", "150"]
+                                            },
+                                            series: [{
+                                                name: '实到人数',
+                                                type: 'line',
+                                                data: [97, 130, 130, 95, 101, 105],
+                                                smooth: true
+                                            },
+                                                {
+                                                    name: '应到人数',
+                                                    type: 'line',
+                                                    data: [130, 130, 130, 130, 130, 130],
+                                                    smooth: true,
+                                                }]
+                                        };
 
-                            option1 = {
-                                title: {
-                                    text: "上课互动次数（近7日）",
-                                    left: 'center',
-                                    subtext: "{a|学生上课互动率高，继续保持！}",
-                                    subtextStyle: {
-                                        rich: {
-                                            a: {
-                                                backgroundColor: '#BCEBDC',
-                                                color: 'black',
-                                                fontWeight: "600",
-                                                fontFamily: "Arial",
-                                                height: 26,
-                                                width: 420,
-                                                fontSize: 16
-                                            }
-                                        }
-                                    }
-                                },
-                                legend: {
-                                    orient: 'horizontal',
-                                    x: 'center',
-                                    y: 'bottom',
-                                    itemGap: 40,
-                                    itemHeight: 5,
-                                    data: [{
-                                        name: '互动次数',
-                                        icon: "rect",
-                                        textStyle: {fontWeight: 'bold', color: 'black'}
-                                    }]
-                                },
-                                toolbox: {
-                                    show: false,
-                                    feature: {
-                                        mark: {show: true},
-                                        dataView: {show: true, readOnly: false},
-                                        magicType: {show: true, type: ['line', 'bar']},
-                                        restore: {show: true},
-                                        saveAsImage: {show: true}
-                                    }
-                                },
-                                tooltip: {
-                                    trigger: 'axis',
-                                    showDelay: 0, // 显示延迟，添加显示延迟可以避免频繁切换，单位ms
-                                    axisPointer: { // 坐标轴指示器，坐标轴触发有效
-                                        type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
-                                    }
-                                },
-                                grid: {
-                                    top: '20%',
-                                    bottom: '10%'
-                                },
-                                legend: {
-                                    x: 'center',
-                                    y: 'bottom',
-                                    data: ['互动次数']
-                                },
-                                xAxis: [
-                                    {
-                                        type: 'category',
-                                        data: ["3.1", "3.2", "3.3", "3.4", "3.5", "3.6"]
-                                    }
-                                ],
-                                yAxis: {},
-                                series: [
-                                    {
-                                        name: '互动次数',
-                                        type: 'bar',
-                                        data: [
-                                            10,
-                                            22,
-                                            28,
-                                            43,
-                                            49,
-                                            52
-                                        ],
-                                        itemStyle: {
-                                            barBorderRadius: 5,
-                                            borderWidth: 1,
-                                            borderType: 'solid',
-                                            borderColor: '#73c0de',
-                                            shadowColor: '#5470c6',
-                                            shadowBlur: 3
-                                        }
-                                    }
-                                ]
-                            };
+                                        option1 = {
+                                            title: {
+                                                text: "上课互动次数（近7日）",
+                                                left: 'center',
+                                                subtext: "{a|学生上课互动率高，继续保持！}",
+                                                subtextStyle: {
+                                                    rich: {
+                                                        a: {
+                                                            backgroundColor: '#BCEBDC',
+                                                            color: 'black',
+                                                            fontWeight: "600",
+                                                            fontFamily: "Arial",
+                                                            height: 26,
+                                                            width: 420,
+                                                            fontSize: 16
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            legend: {
+                                                orient: 'horizontal',
+                                                x: 'center',
+                                                y: 'bottom',
+                                                itemGap: 40,
+                                                itemHeight: 5,
+                                                data: [{
+                                                    name: '互动次数',
+                                                    icon: "rect",
+                                                    textStyle: {fontWeight: 'bold', color: 'black'}
+                                                }]
+                                            },
+                                            toolbox: {
+                                                show: false,
+                                                feature: {
+                                                    mark: {show: true},
+                                                    dataView: {show: true, readOnly: false},
+                                                    magicType: {show: true, type: ['line', 'bar']},
+                                                    restore: {show: true},
+                                                    saveAsImage: {show: true}
+                                                }
+                                            },
+                                            tooltip: {
+                                                trigger: 'axis',
+                                                showDelay: 0, // 显示延迟，添加显示延迟可以避免频繁切换，单位ms
+                                                axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                                                    type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+                                                }
+                                            },
+                                            grid: {
+                                                top: '20%',
+                                                bottom: '10%'
+                                            },
+                                            legend: {
+                                                x: 'center',
+                                                y: 'bottom',
+                                                data: ['互动次数']
+                                            },
+                                            xAxis: [
+                                                {
+                                                    type: 'category',
+                                                    data: [
+                                                        {% for key,value in lesson_act_time.items %}
+                                                            {{ key }},
+                                                        {% endfor %}
+                                                    ]
+                                                }
+                                            ],
+                                            yAxis: {},
+                                            series: [
+                                                {
+                                                    name: '互动次数',
+                                                    type: 'bar',
+                                                    data: [
+                                                        {% for key,value in lesson_act_time.items %}
+                                                            {{ value }},
+                                                        {% endfor %}
+                                                    ],
+                                                    itemStyle: {
+                                                        barBorderRadius: 5,
+                                                        borderWidth: 1,
+                                                        borderType: 'solid',
+                                                        borderColor: '#73c0de',
+                                                        shadowColor: '#5470c6',
+                                                        shadowBlur: 3
+                                                    }
+                                                }
+                                            ]
+                                        };
 
-                            option2 = {
-                                title: {
-                                    text: "上课互动类型（近7日）",
-                                    subtext: "学生上课互动率高，继续保持！",
-                                    left: 'center',
-                                    subtext: "{a|学生上课互动率高，继续保持！}",
-                                    subtextStyle: {
-                                        rich: {
-                                            a: {
-                                                backgroundColor: '#BCEBDC',
-                                                color: 'black',
-                                                fontWeight: "600",
-                                                fontFamily: "Arial",
-                                                height: 26,
-                                                width: 420,
-                                                fontSize: 16
-                                            }
-                                        }
-                                    }
-                                },
-                                toolbox: {
-                                    show: false,
-                                    feature: {
-                                        mark: {show: true},
-                                        dataView: {show: true, readOnly: false},
-                                        magicType: {show: true, type: ['line', 'bar']},
-                                        restore: {show: true},
-                                        saveAsImage: {show: true}
-                                    }
-                                },
-                                tooltip: {
-                                    trigger: 'axis',
-                                    showDelay: 0, // 显示延迟，添加显示延迟可以避免频繁切换，单位ms
-                                    axisPointer: { // 坐标轴指示器，坐标轴触发有效
-                                        type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
-                                    }
-                                },
-                                grid: {
-                                    top: '20%',
-                                    bottom: '10%'
-                                },
-                                legend: {
-                                    x: 'center',
-                                    y: 'bottom',
-                                    data: ['我的互动次数', '课程平均值']
-                                },
-                                xAxis: {},
-                                yAxis: {
-                                    data: ['抢答', '选人', '表演', '小组', '提醒']
-                                },
-                                series: [
-                                    {
-                                        type: 'bar',
-                                        data: [
-                                            10,
-                                            22,
-                                            28,
-                                            49,
-                                            53
-                                        ],
-                                        itemStyle: {
-                                            barBorderRadius: 5,
-                                            borderWidth: 1,
-                                            borderType: 'solid',
-                                            borderColor: '#73c0de',
-                                            shadowColor: '#5470c6',
-                                            shadowBlur: 3
-                                        }
-                                    }
-                                ]
-                            };
+                                        option2 = {
+                                            title: {
+                                                text: "上课互动类型（近7日）",
+                                                subtext: "学生上课互动率高，继续保持！",
+                                                left: 'center',
+                                                subtext: "{a|学生上课互动率高，继续保持！}",
+                                                subtextStyle: {
+                                                    rich: {
+                                                        a: {
+                                                            backgroundColor: '#BCEBDC',
+                                                            color: 'black',
+                                                            fontWeight: "600",
+                                                            fontFamily: "Arial",
+                                                            height: 26,
+                                                            width: 420,
+                                                            fontSize: 16
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            toolbox: {
+                                                show: false,
+                                                feature: {
+                                                    mark: {show: true},
+                                                    dataView: {show: true, readOnly: false},
+                                                    magicType: {show: true, type: ['line', 'bar']},
+                                                    restore: {show: true},
+                                                    saveAsImage: {show: true}
+                                                }
+                                            },
+                                            tooltip: {
+                                                trigger: 'axis',
+                                                showDelay: 0, // 显示延迟，添加显示延迟可以避免频繁切换，单位ms
+                                                axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                                                    type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+                                                }
+                                            },
+                                            grid: {
+                                                top: '20%',
+                                                bottom: '10%'
+                                            },
+                                            legend: {
+                                                x: 'center',
+                                                y: 'bottom',
+                                                data: ['我的互动次数', '课程平均值']
+                                            },
+                                            xAxis: {},
+                                            yAxis: {
+                                                data: [ {% for key,value in lesson_act_type.items %}
+                                                    '{{ key }}',
+                                                {% endfor %}]
+                                            },
+                                            series: [
+                                                {
+                                                    type: 'bar',
+                                                    data: [ {% for key,value in lesson_act_type.items %}
+                                                        {{ value }},
+                                                    {% endfor %}
+                                                    ],
+                                                    itemStyle: {
+                                                        barBorderRadius: 5,
+                                                        borderWidth: 1,
+                                                        borderType: 'solid',
+                                                        borderColor: '#73c0de',
+                                                        shadowColor: '#5470c6',
+                                                        shadowBlur: 3
+                                                    }
+                                                }
+                                            ]
+                                        };
 
                             // 使用刚指定的配置项和数据显示图表。
                             myChart.setOption(option);
@@ -671,404 +671,387 @@
                                     }]
                             };
 
-                            option4 = {
-                                title: {
-                                    text: "学习时段热力（近七日）",
-                                    left: 'center',
-                                    subtext: "{a|学生日均学习时段频次高于其余课程，继续保持！}",
-                                    subtextStyle: {
-                                        rich: {
-                                            a: {
-                                                backgroundColor: '#BCEBDC',
-                                                color: 'black',
-                                                fontWeight: "600",
-                                                fontFamily: "Arial",
-                                                height: 26,
-                                                width: 420,
-                                                fontSize: 16
-                                            }
-                                        }
-                                    }
-                                },
-                                textStyle: {
-                                    fontStyle: 'normal',
-                                    fontWeight: 'normal',
-                                },
-                                tooltip: {},
-                                grid: {
-                                    top: '20%',
-                                    bottom: '10%'
-                                },
-                                xAxis: {
-                                    type: "category",
-                                    data: [0, 1, 2, 3, 4, 5]
-                                },
-                                yAxis: {
-                                    type: "category",
-                                    data: ['00:00-03:59', '04:00-07:59', '08:00-11:59', '12:00-15:59', '16:00-19:59', '20:00-23:59']
-                                },
-                                tooltip: {
-                                    trigger: 'axis',
-                                    axisPointer: { // 坐标轴指示器，坐标轴触发有效
-                                        type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
-                                    },
-                                    // 自定义tooltip
-                                    formatter: function (item) {
-                                        let res = item[0].name + ':<br/>';
-                                        item.forEach((element, index) => {
-                                            if (element.value === '-') element.value = 0;
-                                            if (index == 3) element.value += '%';
-                                            res += element.marker + element.seriesName + " : " + element.value + '<br />'
-                                        })
-                                        return res
-                                    }
-                                },
-                                visualMap: {
-                                    type: "piecewise",
-                                    //特定数据有相对应的数据
-                                    pieces: [
-                                        {value: "3", label: 'aaa', color: '#ccc'},
-                                        {value: "2", label: 'bbb', color: 'red'},
-                                        {value: "1", label: 'ccc', color: '#409dfe'},
-                                    ]
-                                },
-                                series: [{
-                                    name: "Gaussian",
-                                    type: "heatmap",
-                                    label: {
-                                        show: true,
-                                        // 自定义 显示文本
-                                        formatter: (params) => {
-                                            const {label} = params.data;
-                                            return label
-                                        }
-                                    },
-                                    data: [
-                                        {value: [0, 0, 1], label: "文本"},
-                                        [0, 1, 1],
-                                        [0, 2, 1],
-                                        [0, 3, 1],
-                                        [0, 4, 1],
-                                        [0, 2, 1],
-                                        [0, 3, 1],
-                                        [0, 7, 1],
-                                        [0, 8, 1],
-                                        [0, 9, 1],
-                                        [0, 10, 1],
-                                        [0, 11, 1],
-                                        [0, 12, 1],
-                                        [0, 13, 1],
-                                        [0, 14, 1],
-                                        [0, 12, 1],
-                                        [0, 13, 1],
-                                        [0, 17, 1],
-                                        [0, 18, 1],
-                                        [0, 19, 1],
-                                        [0, 20, 1],
-                                        [1, 0, 2],
-                                        [12, 1, 2],
-                                        [1, 2, 2],
-                                        [1, 3, 2],
-                                        [1, 4, 2],
-                                        [10, 2, 2],
-                                        [1, 3, 2],
-                                        [1, 7, 2],
-                                        [1, 8, 2],
-                                        [1, 9, 3],
-                                        [9, 10, 3],
-                                        [1, 11, 3],
-                                        [1, 12, 3],
-                                        [7, 13, 3],
-                                        [1, 14, 3],
-                                        [1, 12, 3],
-                                        [1, 13, 3],
-                                        [2, 17, 3],
-                                        [1, 18, 3],
-                                        [3, 19, 3],
-                                        [2, 20, 3],
-                                    ],
-                                    emphasis: {
-                                        itemStyle: {
-                                            borderColor: "#333",
-                                            borderWidth: 1
-                                        }
-                                    },
-                                    progressive: 1000,
-                                    animation: false,
-                                }]
-                            },
-                                option5 = {
-                                    title: {
-                                        text: "学习方式分布",
-                                        left: 'center'
-                                    },
-                                    toolbox: {
-                                        show: false,
-                                        feature: {
-                                            mark: {show: true},
-                                            dataView: {show: true, readOnly: false},
-                                            magicType: {show: true, type: ['line', 'bar']},
-                                            restore: {show: true},
-                                            saveAsImage: {show: true}
-                                        }
-                                    },
-                                    tooltip: {
-                                        trigger: 'axis',
-                                        showDelay: 0, // 显示延迟，添加显示延迟可以避免频繁切换，单位ms
-                                        axisPointer: { // 坐标轴指示器，坐标轴触发有效
-                                            type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
-                                        }
-                                    },
-                                    grid: {
-                                        top: '20%',
-                                        bottom: '10%'
-                                    },
-                                    legend: {
-                                        orient: 'vertical',
-                                        left: 'left',
-                                        data: ['IOS', 'PC', 'ANDROID'],
-                                    },
-                                    color: ['#249EFF', '#21CCFF', '#313CA9'],
-                                    series: [
-                                        {
-                                            name: ['IOS', 'PC', 'ANDROID'],
-                                            type: 'pie',
-                                            data: [
-                                                {
-                                                    value: 16
-                                                },
-                                                {
-                                                    value: 36
-                                                },
-                                                {
-                                                    value: 48
+                                        option4 = {
+                                            title: {
+                                                text: "学习时段热力（近七日）",
+                                                left: 'center',
+                                                subtext: "{a|学生日均学习时段频次高于其余课程，继续保持！}",
+                                                subtextStyle: {
+                                                    rich: {
+                                                        a: {
+                                                            backgroundColor: '#BCEBDC',
+                                                            color: 'black',
+                                                            fontWeight: "600",
+                                                            fontFamily: "Arial",
+                                                            height: 26,
+                                                            width: 420,
+                                                            fontSize: 16
+                                                        }
+                                                    }
                                                 }
-                                            ],
-                                            radius: ['45%', '60%'],
-                                            center: ["50%", "60%"]
-                                        }
-                                    ]
-                                };
+                                            },
+                                            textStyle: {
+                                                fontStyle: 'normal',
+                                                fontWeight: 'normal',
+                                            },
+                                            tooltip: {},
+                                            grid: {
+                                                top: '20%',
+                                                bottom: '10%'
+                                            },
+                                            xAxis: {
+                                                type: "category",
+                                                data: [ {% for key,value in hot_act_count.items %}
+                                                    {{ key }},
+                                                {% endfor %}]
+                                            },
+                                            yAxis: {
+                                                type: "category",
+                                                data: ['00:00-03:59', '04:00-07:59', '08:00-11:59', '12:00-15:59', '16:00-19:59', '20:00-23:59']
+                                            },
+                                            tooltip: {
+                                                trigger: 'axis',
+                                                axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                                                    type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+                                                },
+                                                // 自定义tooltip
+                                                formatter: function (item) {
+                                                    let res = item[0].name + ':<br/>';
+                                                    item.forEach((element, index) => {
+                                                        if (element.value === '-') element.value = 0;
+                                                        if (index == 3) element.value += '%';
+                                                        res += element.marker + element.seriesName + " : " + element.value + '<br />'
+                                                    })
+                                                    return res
+                                                }
+                                            },
+                                            visualMap: {
+                                                type: "piecewise",
+                                                //特定数据有相对应的数据
+                                                pieces: [
+                                                    {value: "3", label: 'aaa', color: '#ccc'},
+                                                    {value: "2", label: 'bbb', color: 'red'},
+                                                    {value: "1", label: 'ccc', color: '#409dfe'},
+                                                ]
+                                            },
+                                            series: [{
+                                                name: "Gaussian",
+                                                type: "heatmap",
+                                                label: {
+                                                    show: true,
+                                                    // 自定义 显示文本
+                                                    formatter: (params) => {
+                                                        const {label} = params.data;
+                                                        return label
+                                                    }
+                                                },
+                                                data: [
+                                                    {% for key,value in hot_act_count.items %}
+                                                        {% for count in value %}
+                                                            {% if count > 20 %}
+                                                                {
+                                                                    value: [{{ forloop.parentloop.counter|add:-1 }}, {{ forloop.counter|add:-1 }}, 1],
+                                                                    label: {{count}}
+                                                                },
+                                                            {% else %}
+                                                                {
+                                                                    value: [{{ forloop.parentloop.counter|add:-1 }}, {{ forloop.counter|add:-1 }}, 2],
+                                                                    label: {{count}}
+                                                                },
+                                                            {% endif %}
+                                                        {% endfor %}
+                                                    {% endfor %}
+                                                ],
+                                                emphasis: {
+                                                    itemStyle: {
+                                                        borderColor: "#333",
+                                                        borderWidth: 1
+                                                    }
+                                                },
+                                                progressive: 1000,
+                                                animation: false,
+                                            }]
+                                        },
+                                            option5 = {
+                                                title: {
+                                                    text: "学习方式分布",
+                                                    left: 'center'
+                                                },
+                                                toolbox: {
+                                                    show: false,
+                                                    feature: {
+                                                        mark: {show: true},
+                                                        dataView: {show: true, readOnly: false},
+                                                        magicType: {show: true, type: ['line', 'bar']},
+                                                        restore: {show: true},
+                                                        saveAsImage: {show: true}
+                                                    }
+                                                },
+                                                tooltip: {
+                                                    trigger: 'axis',
+                                                    showDelay: 0, // 显示延迟，添加显示延迟可以避免频繁切换，单位ms
+                                                    axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                                                        type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+                                                    }
+                                                },
+                                                grid: {
+                                                    top: '20%',
+                                                    bottom: '10%'
+                                                },
+                                                legend: {
+                                                    orient: 'vertical',
+                                                    left: 'left',
+                                                    data: ['IOS', 'PC', 'ANDROID'],
+                                                },
+                                                color: ['#249EFF', '#21CCFF', '#313CA9'],
+                                                series: [
+                                                    {
+                                                        name: ['IOS', 'PC', 'ANDROID'],
+                                                        type: 'pie',
+                                                        data: [
+                                                            {
+                                                                value: 16
+                                                            },
+                                                            {
+                                                                value: 36
+                                                            },
+                                                            {
+                                                                value: 48
+                                                            }
+                                                        ],
+                                                        radius: ['45%', '60%'],
+                                                        center: ["50%", "60%"]
+                                                    }
+                                                ]
+                                            };
 
                             myChart.setOption(option3);
                             myChart1.setOption(option4);
                             myChart2.setOption(option5);
 
-                            var myChart = echarts.init(document.getElementById('main6'));
-                            var myChart1 = echarts.init(document.getElementById('main7'));
-                            var myChart2 = echarts.init(document.getElementById('main8'));
-                            // 基于准备好的dom，初始化echarts实例
-                            option6 = {
-                                // 图表的表题
-                                title: {
-                                    text: "我的第一个图表"
-                                },
-                                // 图表提示
-                                tooltip: {},
-                                // 图例
-                                legend: {
-                                    data: ["睡眠时长"]
-                                },
-                                // x轴线
-                                xAxis: {
-                                    data: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
-                                },
-                                // y轴线
-                                yAxis: {},
-                                series: [
-                                    {
-                                        // 数据名称
-                                        name: "睡眠时长",
-                                        // 类型为柱状图
-                                        type: "bar",
-                                        // 数据data
-                                        data: [5, 6, 9, 8, 4, 5, 10]
-                                    }
-                                ]
-                            },
-                                option7 = {
-                                    title: {
-                                        // text: '企业一专利热词'
-                                    },
-                                    tooltip: {},
-                                    series: [{
-                                        type: 'wordCloud',
-                                        gridSize: 2,
-                                        sizeRange: [12, 50],
-                                        // rotationRange: [-90, 90],
-                                        rotationRange: [-50, 50],
-                                        shape: 'triangle',
-                                        // width: 100,
-                                        // height: 400,
-                                        textStyle: {
-                                            normal: {
-                                                color: function () {
-                                                    return 'rgb(' + [
-                                                        Math.round(Math.random() * 160),
-                                                        Math.round(Math.random() * 160),
-                                                        Math.round(Math.random() * 160)
-                                                    ].join(',') + ')';
-                                                }
+                                        var myChart = echarts.init(document.getElementById('main6'));
+                                        var myChart1 = echarts.init(document.getElementById('main7'));
+                                        var myChart2 = echarts.init(document.getElementById('main8'));
+                                        // 基于准备好的dom，初始化echarts实例
+                                        option6 = {
+                                            // 图表的表题
+                                            title: {
+                                                text: "我的第一个图表"
                                             },
-                                            emphasis: {
-                                                shadowBlur: 10,
-                                                shadowColor: '#333'
-                                            }
+                                            // 图表提示
+                                            tooltip: {},
+                                            // 图例
+                                            legend: {
+                                                data: ["睡眠时长"]
+                                            },
+                                            // x轴线
+                                            xAxis: {
+                                                data: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
+                                            },
+                                            // y轴线
+                                            yAxis: {},
+                                            series: [
+                                                {
+                                                    // 数据名称
+                                                    name: "睡眠时长",
+                                                    // 类型为柱状图
+                                                    type: "bar",
+                                                    // 数据data
+                                                    data: [5, 6, 9, 8, 4, 5, 10]
+                                                }
+                                            ]
                                         },
-                                        data: [
-                                            {
-                                                name: 'Authentication',
-                                                value: 10000,
-                                                textStyle: {
-                                                    normal: {
-                                                        color: 'black'
+                                            option7 = {
+                                                title: {
+                                                    // text: '企业一专利热词'
+                                                },
+                                                tooltip: {},
+                                                series: [{
+                                                    type: 'wordCloud',
+                                                    gridSize: 2,
+                                                    sizeRange: [12, 50],
+                                                    // rotationRange: [-90, 90],
+                                                    rotationRange: [-50, 50],
+                                                    shape: 'triangle',
+                                                    // width: 100,
+                                                    // height: 400,
+                                                    textStyle: {
+                                                        normal: {
+                                                            color: function () {
+                                                                return 'rgb(' + [
+                                                                    Math.round(Math.random() * 160),
+                                                                    Math.round(Math.random() * 160),
+                                                                    Math.round(Math.random() * 160)
+                                                                ].join(',') + ')';
+                                                            }
+                                                        },
+                                                        emphasis: {
+                                                            shadowBlur: 10,
+                                                            shadowColor: '#333'
+                                                        }
                                                     },
-                                                    emphasis: {
-                                                        color: 'red'
+                                                    data: [
+                                                        {
+                                                            name: 'Authentication',
+                                                            value: 10000,
+                                                            textStyle: {
+                                                                normal: {
+                                                                    color: 'black'
+                                                                },
+                                                                emphasis: {
+                                                                    color: 'red'
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            name: 'Streaming of segmented content',
+                                                            value: 6181
+                                                        },
+                                                        {
+                                                            name: 'Amy Schumer',
+                                                            value: 4386
+                                                        },
+                                                        {
+                                                            name: 'Jurassic World',
+                                                            value: 4055
+                                                        },
+                                                        {
+                                                            name: 'Charter Communications',
+                                                            value: 2467
+                                                        },
+                                                        {
+                                                            name: 'Chick Fil A',
+                                                            value: 2244
+                                                        },
+                                                        {
+                                                            name: 'Planet Fitness',
+                                                            value: 1898
+                                                        },
+                                                        {
+                                                            name: 'Pitch Perfect',
+                                                            value: 1484
+                                                        },
+                                                        {
+                                                            name: 'Express',
+                                                            value: 1112
+                                                        },
+                                                        {
+                                                            name: 'Home',
+                                                            value: 965
+                                                        },
+                                                        {
+                                                            name: 'Johnny Depp',
+                                                            value: 847
+                                                        },
+                                                        {
+                                                            name: 'Lena Dunham',
+                                                            value: 582
+                                                        },
+                                                        {
+                                                            name: 'Lewis Hamilton',
+                                                            value: 555
+                                                        },
+                                                        {
+                                                            name: 'KXAN',
+                                                            value: 550
+                                                        },
+                                                        {
+                                                            name: 'Mary Ellen Mark',
+                                                            value: 462
+                                                        },
+                                                        {
+                                                            name: 'Farrah Abraham',
+                                                            value: 366
+                                                        },
+                                                        {
+                                                            name: 'Rita Ora',
+                                                            value: 360
+                                                        },
+                                                        {
+                                                            name: 'Serena Williams',
+                                                            value: 282
+                                                        },
+                                                        {
+                                                            name: 'NCAA baseball tournament',
+                                                            value: 273
+                                                        },
+                                                        {
+                                                            name: 'Point Break',
+                                                            value: 265
+                                                        }
+                                                    ]
+                                                }]
+                                            },
+                                            option8 = {
+                                                title: {
+                                                    text: "学习热点曲线（近7日）",
+                                                    left: 'center',
+                                                    subtext: "{a|学生日均学习频次高于其余课程，继续保持！}",
+                                                    subtextStyle: {
+                                                        rich: {
+                                                            a: {
+                                                                backgroundColor: '#BCEBDC',
+                                                                color: 'black',
+                                                                fontWeight: "600",
+                                                                fontFamily: "Arial",
+                                                                height: 26,
+                                                                width: 420,
+                                                                fontSize: 16
+                                                            }
+                                                        }
+                                                    },
+                                                },
+                                                xAxis: {
+                                                    data: [
+                                                        {% for key,value in learn_curve.items %}
+                                                            {{ key }},
+                                                        {% endfor %}
+                                                    ]
+                                                },
+                                                yAxis: {
+                                                    data1: ["3", "6", "9", "12", "1500", "18"]
+                                                },
+                                                toolbox: {
+                                                    show: false,
+                                                    feature: {
+                                                        mark: {show: true},
+                                                        dataView: {show: true, readOnly: false},
+                                                        magicType: {show: true, type: ['line', 'bar']},
+                                                        restore: {show: true},
+                                                        saveAsImage: {show: true}
                                                     }
-                                                }
-                                            },
-                                            {
-                                                name: 'Streaming of segmented content',
-                                                value: 6181
-                                            },
-                                            {
-                                                name: 'Amy Schumer',
-                                                value: 4386
-                                            },
-                                            {
-                                                name: 'Jurassic World',
-                                                value: 4055
-                                            },
-                                            {
-                                                name: 'Charter Communications',
-                                                value: 2467
-                                            },
-                                            {
-                                                name: 'Chick Fil A',
-                                                value: 2244
-                                            },
-                                            {
-                                                name: 'Planet Fitness',
-                                                value: 1898
-                                            },
-                                            {
-                                                name: 'Pitch Perfect',
-                                                value: 1484
-                                            },
-                                            {
-                                                name: 'Express',
-                                                value: 1112
-                                            },
-                                            {
-                                                name: 'Home',
-                                                value: 965
-                                            },
-                                            {
-                                                name: 'Johnny Depp',
-                                                value: 847
-                                            },
-                                            {
-                                                name: 'Lena Dunham',
-                                                value: 582
-                                            },
-                                            {
-                                                name: 'Lewis Hamilton',
-                                                value: 555
-                                            },
-                                            {
-                                                name: 'KXAN',
-                                                value: 550
-                                            },
-                                            {
-                                                name: 'Mary Ellen Mark',
-                                                value: 462
-                                            },
-                                            {
-                                                name: 'Farrah Abraham',
-                                                value: 366
-                                            },
-                                            {
-                                                name: 'Rita Ora',
-                                                value: 360
-                                            },
-                                            {
-                                                name: 'Serena Williams',
-                                                value: 282
-                                            },
-                                            {
-                                                name: 'NCAA baseball tournament',
-                                                value: 273
-                                            },
-                                            {
-                                                name: 'Point Break',
-                                                value: 265
-                                            }
-                                        ]
-                                    }]
-                                },
-                                option8 = {
-                                    title: {
-                                        text: "学习热点曲线（近7日）",
-                                        left: 'center',
-                                        subtext: "{a|学生日均学习频次高于其余课程，继续保持！}",
-                                        subtextStyle: {
-                                            rich: {
-                                                a: {
-                                                    backgroundColor: '#BCEBDC',
-                                                    color: 'black',
-                                                    fontWeight: "600",
-                                                    fontFamily: "Arial",
-                                                    height: 26,
-                                                    width: 420,
-                                                    fontSize: 16
-                                                }
-                                            }
-                                        },
-                                    },
-                                    xAxis: {
-                                        data: ["3.1", "3.2", "3.3", "3.4", "3.5", "3.6"]
-                                    },
-                                    yAxis: {
-                                        data1: ["300", "600", "900", "1200", "1500", "1800"]
-                                    },
-                                    toolbox: {
-                                        show: false,
-                                        feature: {
-                                            mark: {show: true},
-                                            dataView: {show: true, readOnly: false},
-                                            magicType: {show: true, type: ['line', 'bar']},
-                                            restore: {show: true},
-                                            saveAsImage: {show: true}
-                                        }
-                                    },
-                                    tooltip: {
-                                        trigger: 'axis',
-                                        showDelay: 0, // 显示延迟，添加显示延迟可以避免频繁切换，单位ms
-                                        axisPointer: { // 坐标轴指示器，坐标轴触发有效
-                                            type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
-                                        }
-                                    },
-                                    grid: {
-                                        top: '20%',
-                                        bottom: '10%'
-                                    },
-                                    legend: {
-                                        orient: 'horizontal',
-                                        x: 'center',
-                                        y: 'bottom',
-                                        data: ['点击量']
-                                    },
-                                    series: [
-                                        {
-                                            name: '点击量',
-                                            data: [1500, 1200, 1180, 880, 1600, 1210, 1450],
-                                            type: 'line'
-                                        }]
-                                };
-                            myChart.setOption(option6);
-                            myChart1.setOption(option7);
-                            myChart2.setOption(option8);
+                                                },
+                                                tooltip: {
+                                                    trigger: 'axis',
+                                                    showDelay: 0, // 显示延迟，添加显示延迟可以避免频繁切换，单位ms
+                                                    axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                                                        type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+                                                    }
+                                                },
+                                                grid: {
+                                                    top: '20%',
+                                                    bottom: '10%'
+                                                },
+                                                legend: {
+                                                    orient: 'horizontal',
+                                                    x: 'center',
+                                                    y: 'bottom',
+                                                    data: ['点击量']
+                                                },
+                                                series: [
+                                                    {
+                                                        name: '点击量',
+                                                        data: [
+                                                            {% for key,value in learn_curve.items %}
+                                                                {{ value }},
+                                                            {% endfor %}
+                                                        ],
+                                                        type: 'line'
+                                                    }]
+                                            };
+                                        myChart.setOption(option6);
+                                        myChart1.setOption(option7);
+                                        myChart2.setOption(option8);
 
                             var myChart = echarts.init(document.getElementById('main9'));
                             var myChart1 = echarts.init(document.getElementById('main10'));
