@@ -1,3 +1,4 @@
+import copy
 
 from django.shortcuts import render, redirect
 from IndexPage import models
@@ -66,41 +67,7 @@ def jsontest(request):
 
 
 
-    #近七天加这段：     .filter(insert_time__gte=start_date, insert_time__lte=end_date)\
 
-    # 作业完成分布(教师)
-    # 改
-    lesson_work_post_all = []
-    work_library_id = TStatWorkRelation.objects.filter(courseid=use_courseid).values('work_library_id')
-    work_count = work_library_id.count()
-    for i in range(work_count):
-        work_id = work_library_id[i]["work_library_id"]
-        work_post = TStatWorkAnswer.objects.filter(courseid=use_courseid) \
-            .filter(work_library_id=work_id) \
-            .annotate(date=TruncDate('insert_time')) \
-            .values('date') \
-            .annotate(count_work=Count('id') / renshu) \
-            .order_by('date')
-        percent_work = 0
-        lesson_work_post1 = {}
-        for item in work_post:
-            percent_work = percent_work + item['count_work']
-            percent_work = float("{:.2f}".format(percent_work))
-            ddaa = str(item['date'])
-            lesson_work_post1[ddaa] = percent_work
-        lesson_work_post_all.append(lesson_work_post1)
-        lesson_work_post_all_in_all.append(lesson_work_post1)
-
-    use_courseid = 224841013
-    end_date = datetime.now()
-    start_date = end_date - timedelta(days=7)
-
-    # 近七天加这段：     .filter(insert_time__gte=start_date, insert_time__lte=end_date)\
-
-
-
-
-    ####### 近七天加这段：     .filter(insert_time__gte=start_date, insert_time__lte=end_date)\
 
 
     # 作业完成分布
@@ -124,10 +91,31 @@ def jsontest(request):
             ddaa = str(item['date'])
             lesson_work_post1[ddaa] = percent_work
         lesson_work_post_all.append(lesson_work_post1)
+    # print("*****")
+    # print(lesson_work_post_all)
+    dict_all = {}
 
+    for dict_one in lesson_work_post_all:
+        dict_all = dict(dict_all, **dict_one)
+    dict_all = dict(sorted(dict_all.items(), key=lambda d: d[0]))
+    # print(f"dict_all{dict(dict_all)}")
+    result = []
+    for dict_one in lesson_work_post_all:
+        flag = 0
+        dict_all_copy = dict(copy.deepcopy(dict_all))
+        # print(f"@@@@ dict_one:{dict_one}\n@@@@ dict_all_copy:{dict_all_copy}\n")
+        for key, value in dict_all_copy.items():
+            if key in dict_one:
+                dict_all_copy[key] = dict_one[key]
+                flag = dict_one[key]
+            else:
+                dict_all_copy[key] = flag
+        result.append(dict_all_copy)
+    # print(f"@@result:{result}")
 
-
-
+    use_courseid = 224841013
+    end_date = datetime.now()
+    start_date = end_date - timedelta(days=7)
 
     # 任务点偏好分析
     # 改
@@ -316,7 +304,8 @@ def jsontest(request):
     lesson_all = {
         "learn_answer":learn_answer,
         "lesson_work_post_all_in_all":lesson_work_post_all_in_all,
-        "lesson_work_post": lesson_work_post_all,  # 作业完成分布作业1 ￥
+        #"lesson_work_post": lesson_work_post_all,  # 作业完成分布作业1 ￥
+        "lesson_work_post": result,  # 作业完成分布作业1 ￥
         "job_finish_all": job_finish_all,  # 任务点完成分布 ￥
         "lesson_job_like": lesson_job_like,  # 任务点偏好 ￥
         "std_final_score": std_final_score,  # 总体成绩分析  ￥
