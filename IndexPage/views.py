@@ -1,57 +1,25 @@
-from django.shortcuts import render, redirect
-from IndexPage import models
-from django.http import JsonResponse
-
-from django.db.models import Count, F
-from .models import *
-from datetime import datetime, timedelta
-
-from django.db.models import FloatField, Avg, Q
-from django.db.models.functions import *
-from django.db.models import IntegerField, Value
 from django.db.models import *
-from django.db.models.functions import Cast
-import pandas as pd
-from django.shortcuts import render, redirect
-from IndexPage import models
-from django.http import JsonResponse
-from datetime import datetime, timedelta
-from django.db.models import DateTimeField
-from django.db.models import Count, Sum, Avg, F
-from .models import *
-from django.db.models import FloatField, Avg, Q
+from django.shortcuts import render
+from LearningCondition import models
+from django.db.models import Count
+from IndexPage.models import *
 from django.db.models.functions import *
-from django.db.models import IntegerField, Value
-from django.db.models.functions import Cast
-import pandas as pd
-from django.db.models import Q
+
 import json
 
 
-import json
 def index_zzh(request):
-
-
-    learn_curve = {
-
-    }
+    learn_curve = {}
 
     word_cloud = []
 
     like_job = []
 
-    hot_act_count = {
+    hot_act_count = {}
 
-    }
+    lesson_act_type = {}
 
-    lesson_act_type = {
-
-    }
-
-    lesson_act_time = {
-
-    }
-
+    lesson_act_time = {}
 
     # lesson_act_type
     use_courseid = 224841013
@@ -150,15 +118,14 @@ def index_zzh(request):
 
     # with open("data.json", "w") as f:
     #     json.dump(course_all, f)
+    print(course_all)
 
     return render(request, 'TeachingResult.html', course_all)
 
 
-def index_qjh(request):
+def index_lsj(request):
     use_courseid = 224841013
-    learn_answer = {
-
-    }
+    learn_answer = {}
     bbs_count_day = TStatBbsLog.objects.filter(courseid=use_courseid) \
         .filter(topic_id=0) \
         .annotate(date=TruncDate('last_modify_time')) \
@@ -177,9 +144,7 @@ def index_qjh(request):
         .values('date') \
         .annotate(count=Count('parent_id')).distinct() \
         .order_by('date')
-    learn_topic = {
-
-    }
+    learn_topic = {}
 
     for item in bbs_count_days:
         fatie_works = item['count']
@@ -187,14 +152,12 @@ def index_qjh(request):
         learn_topic[ddaa] = fatie_works
 
     lesson_all = {
-
         "learn_answer": learn_answer,
         "learn_topic": learn_topic,
-
     }
 
-    with open("data.json", "w") as f:
-        json.dump(lesson_all, f)
+    # with open("data.json", "w") as f:
+    #     json.dump(lesson_all, f)
 
     return render(request, "TeachingResult.html", lesson_all)
 

@@ -22,7 +22,8 @@ from TeachingResult import views as TeachingResultViews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/', IndexPageViews.index),
+    path('index_zzh/', IndexPageViews.index_zzh),
+    path('index_lsj/', IndexPageViews.index_lsj),
     path('learning_condition/', LearningConditionViews.portrait),
     path('course/', LearningConditionViews.course),
     path('course_resource/', LearningConditionViews.course_resource),

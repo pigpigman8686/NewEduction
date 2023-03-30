@@ -1,23 +1,15 @@
 import copy
-
-from django.shortcuts import render, redirect
-from IndexPage import models
-from django.http import JsonResponse
-from datetime import datetime, timedelta, date
-from django.db.models import DateTimeField
-from django.db.models import Count, Sum, Avg, F
-from .models import *
-from django.db.models import FloatField, Avg, Q
-from django.db.models.functions import *
-from django.db.models import IntegerField, Value
-from django.db.models.functions import Cast
-import pandas as pd
-from django.db.models import Q
 import json
+from django.shortcuts import render
+from django.http import JsonResponse
+from datetime import datetime, timedelta
+from django.db.models import Count
+from IndexPage.models import *
+from django.db.models import Avg
+from django.db.models.functions import *
 
 
 # Create your views here.
-
 
 
 def jsontest(request):
@@ -26,13 +18,7 @@ def jsontest(request):
     renshu = TStatCoursePerson.objects.filter(courseid=use_courseid).filter(role=3)
     renshu = float(renshu.count())
 
-
-
-
-
-
-    lesson_work_post_all_in_all = [
-    ]
+    lesson_work_post_all_in_all = []
 
     # 作业完成分布（学生）
     # 改
@@ -41,14 +27,14 @@ def jsontest(request):
     renshu = TStatCoursePerson.objects.filter(courseid=use_courseid).filter(role=3)
     renshu = float(renshu.count())
     lesson_work_post_std = []
-    #所有作业id
+    # 所有作业id
     work_library_id = TStatWorkRelation.objects.filter(courseid=use_courseid).values('work_library_id')
-    #所有作业id的数量
+    # 所有作业id的数量
     work_count = work_library_id.count()
     for i in range(work_count):
         work_id = work_library_id[i]["work_library_id"]
         work_post = TStatWorkAnswer.objects.filter(courseid=use_courseid) \
-            .filter(personid=std_personid)\
+            .filter(personid=std_personid) \
             .filter(work_library_id=work_id) \
             .annotate(date=TruncDate('insert_time')) \
             .values('date') \
@@ -63,12 +49,6 @@ def jsontest(request):
             lesson_work_post1[ddaa] = percent_work
         lesson_work_post_std.append(lesson_work_post1)
         lesson_work_post_all_in_all.append(lesson_work_post1)
-
-
-
-
-
-
 
     # 作业完成分布
     # 改
@@ -131,10 +111,6 @@ def jsontest(request):
     }
     for item in job_like:
         lesson_job_like[item["type"]] = item["count"]
-
-
-
-
 
     # 总体成绩分析
     # 改
@@ -220,12 +196,6 @@ def jsontest(request):
         ff = float("{:.2f}".format(ff))
         std_exam_score_nan_du[exam_avg[item]['exam_id']] = ff
 
-
-
-
-
-
-
     # 教师任务点完成分布：*******(return job_finish_all)
     # 改
     # 任务点总数
@@ -273,10 +243,6 @@ def jsontest(request):
         "job_chao_guo": job_chao_guo  # 任务点完成率超过了job_chao_guo%的人
     }
 
-
-
-
-
     learn_answer = {
 
     }
@@ -292,19 +258,10 @@ def jsontest(request):
         ddaa = str(item['date'])
         learn_answer[ddaa] = huitie_work
 
-
-
-
-
-
-
-
-
-
     lesson_all = {
-        "learn_answer":learn_answer,
-        "lesson_work_post_all_in_all":lesson_work_post_all_in_all,
-        #"lesson_work_post": lesson_work_post_all,  # 作业完成分布作业1 ￥
+        "learn_answer": learn_answer,
+        "lesson_work_post_all_in_all": lesson_work_post_all_in_all,
+        # "lesson_work_post": lesson_work_post_all,  # 作业完成分布作业1 ￥
         "lesson_work_post": result,  # 作业完成分布作业1 ￥
         "job_finish_all": job_finish_all,  # 任务点完成分布 ￥
         "lesson_job_like": lesson_job_like,  # 任务点偏好 ￥
@@ -313,10 +270,10 @@ def jsontest(request):
 
     }
     lesson_std = {
-        #"lesson_work_post_all_in_all":lesson_work_post_all_in_all
-        #"lesson_work_post": lesson_work_post_all,  # 作业完成分布作业1 ￥
-        #"job_finish_all": job_finish_all,  # 任务点完成分布 ￥
-        #"job_finish_all": job_finish_std,  # 任务点完成分布 ￥
+        # "lesson_work_post_all_in_all":lesson_work_post_all_in_all
+        # "lesson_work_post": lesson_work_post_all,  # 作业完成分布作业1 ￥
+        # "job_finish_all": job_finish_all,  # 任务点完成分布 ￥
+        # "job_finish_all": job_finish_std,  # 任务点完成分布 ￥
         # "lesson_job_like": lesson_job_like,  # 任务点偏好 ￥
         # "std_final_score": std_final_score,  # 总体成绩分析  ￥
         # "std_exam_score_nan_du": std_exam_score_nan_du,  # 考试质量分析
@@ -324,20 +281,10 @@ def jsontest(request):
         # "learn_topic":learn_topic
 
     }
-    print
-    with open("data.json", "w") as f:
-        json.dump(lesson_all, f)
+    # with open("data.json", "w") as f:
+    #     json.dump(lesson_all, f)
 
     return JsonResponse(lesson_all)
-
-
-
-
-
-
-
-
-
 
 
 def course(request):
@@ -346,12 +293,10 @@ def course(request):
 
 
 def course_resource(request):
-
     return render(request, 'Student/CourseResources.html')
 
 
 def path_plan(request):
-
     return render(request, 'Student/PathPlan.html')
 
 
