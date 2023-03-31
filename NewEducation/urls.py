@@ -15,21 +15,25 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from IndexPage import views as IndexPageViews
-from LearningCondition import views as LearningConditionViews
-from TeachingData import views as TeachingDataViews
-from TeachingResult import views as TeachingResultViews
+from Student import views as StudentViews
+from Teacher import views as TeacherViews
+from SuperAdmin import views as SuperAdminViews
+# from IndexPage import views as IndexPageViews
+# from LearningCondition import views as LearningConditionViews
+# from TeachingData import views as TeachingDataViews
+# from TeachingResult import views as TeachingResultViews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('teacher/teaching_result', TeacherViews.analyse),
     # path('index_zzh/', IndexPageViews.index_zzh),
     # path('index_lsj/', IndexPageViews.index_lsj),
-    path('learning_condition/', LearningConditionViews.portrait),
-    path('course/', LearningConditionViews.course),
-    path('course_resource/', LearningConditionViews.course_resource),
-    path('path_plan/', LearningConditionViews.path_plan),
-    path('teaching_data/', TeachingDataViews.catalog),
-    path('teaching_result/', TeachingResultViews.analyse),
+    # path('learning_condition/', LearningConditionViews.portrait),
+    # path('course/', LearningConditionViews.course),
+    # path('course_resource/', LearningConditionViews.course_resource),
+    # path('path_plan/', LearningConditionViews.path_plan),
+    # path('teaching_data/', TeachingDataViews.catalog),
+    # path('teaching_result/', TeachingResultViews.analyse),
 
 
 ]

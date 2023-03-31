@@ -2,9 +2,8 @@ import copy
 import json
 from django.db.models import *
 from django.shortcuts import render
-from LearningCondition import models
+from NewEducation.models import *
 from django.db.models import Count
-from IndexPage.models import *
 from django.db.models.functions import *
 from django.http import JsonResponse
 from datetime import datetime, timedelta
