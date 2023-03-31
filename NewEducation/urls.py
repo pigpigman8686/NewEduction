@@ -22,14 +22,14 @@ from TeachingResult import views as TeachingResultViews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index_zzh/', IndexPageViews.index_zzh),
-    path('index_lsj/', IndexPageViews.index_lsj),
+    # path('index_zzh/', IndexPageViews.index_zzh),
+    # path('index_lsj/', IndexPageViews.index_lsj),
     path('learning_condition/', LearningConditionViews.portrait),
     path('course/', LearningConditionViews.course),
     path('course_resource/', LearningConditionViews.course_resource),
     path('path_plan/', LearningConditionViews.path_plan),
     path('teaching_data/', TeachingDataViews.catalog),
     path('teaching_result/', TeachingResultViews.analyse),
-    path('jsontest/', LearningConditionViews.jsontest)
+
 
 ]
