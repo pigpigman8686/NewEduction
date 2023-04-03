@@ -122,7 +122,7 @@ def index_zzh(request):
     #     json.dump(course_all, f)
     # print(course_all)
 
-    return render(request, 'TeachingResult.html', course_all)
+    return render(request, 'Teacher/../templates/SuperAdmin/TeachingResult.html', course_all)
 
 
 def index_lsj(request):
@@ -163,7 +163,7 @@ def index_lsj(request):
     #     with open("data.json", "w") as f:
     #     json.dump(lesson_all, f)
 
-    return render(request, "TeachingResult.html", lesson_all)
+    return render(request, "Teacher/../templates/SuperAdmin/TeachingResult.html", lesson_all)
 
 
 def index_qjh(request):
@@ -481,4 +481,4 @@ def index_qjh(request):
     with open("data.json", "w") as f:
         json.dump(lesson_all, f)
 
-    return render(request, "TeachingResult.html", lesson_all)
+    return render(request, "Teacher/../templates/SuperAdmin/TeachingResult.html", lesson_all)

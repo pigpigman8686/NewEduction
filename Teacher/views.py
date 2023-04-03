@@ -230,4 +230,8 @@ def analyse(request):
 
     }
 
-    return render(request, 'TeachingResult.html', message)
+    return render(request, './SuperAdmin/TeachingResult.html', message)
+
+
+def index(request):
+    return render(request, './Student/Studentportrait.html')

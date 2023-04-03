@@ -12,50 +12,50 @@
                 <!-- 顶部标题 -->
                 <div class="row" style="margin-left: 20px">
                     <div class="col-3" style="padding: 10px;">
-                        <h5><b>课程资源</b></h5>
+                        <h5><b style="font-size: 16px">课程资源</b></h5>
                     </div>
                 </div>
                 <div class="row" style="margin-left: 20px;margin-bottom: 10px;padding: 0 20px 0 20px">
                     <div class="col-1">
-                        <button type="button" class="btn btn-primary btn-sm">全部</button>
+                        <button type="button" class="btn btn-primary btn-sm" style="width: 60px;height: 30px; ; background: #F5F5F5; color: #1F63FF; border: none; border-radius:32px">全部</button>
                     </div>
                     <div class="col-1">
-                        <button type="button" class="btn btn-outline-primary btn-sm">视频资源</button>
+                        <button type="button" class="btn btn-outline-primary btn-sm" style="width: 88px; height: 30px; color: #4E5969; border: none;border-radius:32px">视频资源</button>
                     </div>
                     <div class="col-1">
-                        <button type="button" class="btn btn-outline-primary btn-sm">文档资源</button>
+                        <button type="button" class="btn btn-outline-primary btn-sm" style="width: 88px; height: 30px; color: #4E5969; border: none;border-radius:32px">文档资源</button>
                     </div>
                     <div class="col-1">
-                        <button type="button" class="btn btn-outline-primary btn-sm">书籍资源</button>
+                        <button type="button" class="btn btn-outline-primary btn-sm" style="width: 88px; height: 30px; color: #4E5969; border: none;border-radius:32px">书籍资源</button>
                     </div>
                     <div class="col-1">
-                        <button type="button" class="btn btn-outline-primary btn-sm">试题资源</button>
+                        <button type="button" class="btn btn-outline-primary btn-sm" style="width: 88px; height: 30px; color: #4E5969; border: none;border-radius:32px">试题资源</button>
                     </div>
                     <div class="col-2 offset-5">
                         <form class="d-flex">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-primary" type="submit">Search</button>
+                            <input class="form-control me-2" type="Search" placeholder="搜索" aria-label="Search" style="width: 240px; height: 32px; background: #F2F3F5; color: #0052D9; margin-left:-20px">
+                            <button class="btn btn-outline-primary" type="submit" style="height: 32px">?</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-
+        <br>
         <div class="row" style="margin-top: 10px;">
             <div class="col-1" style="width: 10px">
                 <div style="width: 4px;height:100%;background-color: #0d6efd;display: inline-block;"></div>
             </div>
             <div class="col-9">
-                <h6 style="color:#0d6efd;display: inline;"><b>精选推荐</b></h6>
+                <h6 style="font-size: 18px; color:#0d6efd;display: inline;"><b>精选推荐</b></h6>
             </div>
             <div class="col text-end">
-                <a href="#">
-                    <img src="{% static 'img/icons/shuffle.svg' %}">
-                    切换列表模式
+                <a href="#" style="text-decoration:none;">
+                    <img src="{% static 'img/icons/转换.svg' %}" style=" width:16px; height: 16px; display: inline">
+                    <p style="color: #165DFF; display: inline">切换列表模式</p>
                 </a>
             </div>
         </div>
-
+        <br>
         <div class="row" style="padding-top: 20px;background-color: white;border-radius: 10px">
             <div class="col-4" style="padding: 0 20px 0 20px">
                 <div class="card" style="width: 100%;">
@@ -68,11 +68,11 @@
                     {#                    </div>#}
                     <div class="card-body">
                         <h6 class="card-subtitle mb-2 text-muted" style="display: inline">13分12秒</h6>
-                        <h6 class="card-subtitle mb-2 text-muted" style="display: inline;margin-left: 50%">点击量：</h6>
+                        <h6 class="card-subtitle mb-2 text-muted" style="display: inline;margin-left: 40%">点击量：</h6>
                         <h6 style="display: inline;color: #0d6efd">58489人次</h6>
                         <h5 class="card-title"><b>《地质信息技术导论》</b></h5>
-                        <p class="card-text" style="display: inline">武忠祥</p>
-                        <a href="#" class="btn btn-primary">大咖讲师</a>
+                        <p class="card-text" style="display: inline; font-size: 20px; margin-left:15px"><b>武忠祥</b></p>
+                        <a href="#" class="btn btn-primary" style="background: #F6EBD8; color: #F29542; font-size: 14px; border: none; border-radius:32px; margin-left:10px">大咖讲师</a>
                     </div>
                 </div>
             </div>
@@ -81,17 +81,17 @@
                     <img src="{% static 'img/1.png' %}" class="card-img-top">
                     <button type="button" class="btn btn-secondary btn-sm"
                             style="width: 100px;background: rgba(255,255,255,0.5);z-index: 1000;position: absolute;top: 10px;left: 10px;border: none;color: black">
-                        <b>视频资源</b></button>
+                        <b>文档资源</b></button>
                     {#                    <div style="background-color: red;display: inline">#}
                     {#                        <h6><b style="z-index: 1000;position: absolute;top: 10px;left: 10px">视频资源</b></h6>#}
                     {#                    </div>#}
                     <div class="card-body">
                         <h6 class="card-subtitle mb-2 text-muted" style="display: inline">13分12秒</h6>
-                        <h6 class="card-subtitle mb-2 text-muted" style="display: inline;margin-left: 50%">点击量：</h6>
+                        <h6 class="card-subtitle mb-2 text-muted" style="display: inline;margin-left: 40%">点击量：</h6>
                         <h6 style="display: inline;color: #0d6efd">58489人次</h6>
                         <h5 class="card-title"><b>《地质信息技术导论》</b></h5>
-                        <p class="card-text" style="display: inline">武忠祥</p>
-                        <a href="#" class="btn btn-primary">大咖讲师</a>
+                        <p class="card-text" style="display: inline; font-size: 20px; margin-left:15px"><b>武忠祥</b></p>
+                        <a href="#" class="btn btn-primary" style="background: #F6EBD8; color: #F29542; font-size: 14px; border: none; border-radius:32px; margin-left:10px">大咖讲师</a>
                     </div>
                 </div>
             </div>
@@ -100,17 +100,17 @@
                     <img src="{% static 'img/1.png' %}" class="card-img-top">
                     <button type="button" class="btn btn-secondary btn-sm"
                             style="width: 100px;background: rgba(255,255,255,0.5);z-index: 1000;position: absolute;top: 10px;left: 10px;border: none;color: black">
-                        <b>视频资源</b></button>
+                        <b>试题资源</b></button>
                     {#                    <div style="background-color: red;display: inline">#}
                     {#                        <h6><b style="z-index: 1000;position: absolute;top: 10px;left: 10px">视频资源</b></h6>#}
                     {#                    </div>#}
                     <div class="card-body">
                         <h6 class="card-subtitle mb-2 text-muted" style="display: inline">13分12秒</h6>
-                        <h6 class="card-subtitle mb-2 text-muted" style="display: inline;margin-left: 50%">点击量：</h6>
+                        <h6 class="card-subtitle mb-2 text-muted" style="display: inline;margin-left: 40%">点击量：</h6>
                         <h6 style="display: inline;color: #0d6efd">58489人次</h6>
                         <h5 class="card-title"><b>《地质信息技术导论》</b></h5>
-                        <p class="card-text" style="display: inline">武忠祥</p>
-                        <a href="#" class="btn btn-primary">大咖讲师</a>
+                        <p class="card-text" style="display: inline; font-size: 20px; margin-left:15px"><b>武忠祥</b></p>
+                        <a href="#" class="btn btn-primary" style="background: #F6EBD8; color: #F29542; font-size: 14px; border: none; border-radius:32px; margin-left:10px">大咖讲师</a>
                     </div>
                 </div>
             </div>
@@ -127,11 +127,11 @@
                     {#                    </div>#}
                     <div class="card-body">
                         <h6 class="card-subtitle mb-2 text-muted" style="display: inline">13分12秒</h6>
-                        <h6 class="card-subtitle mb-2 text-muted" style="display: inline;margin-left: 50%">点击量：</h6>
+                        <h6 class="card-subtitle mb-2 text-muted" style="display: inline;margin-left: 40%">点击量：</h6>
                         <h6 style="display: inline;color: #0d6efd">58489人次</h6>
                         <h5 class="card-title"><b>《地质信息技术导论》</b></h5>
-                        <p class="card-text" style="display: inline">武忠祥</p>
-                        <a href="#" class="btn btn-primary">大咖讲师</a>
+                        <p class="card-text" style="display: inline; font-size: 20px; margin-left:15px"><b>武忠祥</b></p>
+                        <a href="#" class="btn btn-primary" style="background: #F6EBD8; color: #F29542; font-size: 14px; border: none; border-radius:32px; margin-left:10px">大咖讲师</a>
                     </div>
                 </div>
             </div>
@@ -140,17 +140,17 @@
                     <img src="{% static 'img/1.png' %}" class="card-img-top">
                     <button type="button" class="btn btn-secondary btn-sm"
                             style="width: 100px;background: rgba(255,255,255,0.5);z-index: 1000;position: absolute;top: 10px;left: 10px;border: none;color: black">
-                        <b>视频资源</b></button>
+                        <b>文档资源</b></button>
                     {#                    <div style="background-color: red;display: inline">#}
                     {#                        <h6><b style="z-index: 1000;position: absolute;top: 10px;left: 10px">视频资源</b></h6>#}
                     {#                    </div>#}
                     <div class="card-body">
                         <h6 class="card-subtitle mb-2 text-muted" style="display: inline">13分12秒</h6>
-                        <h6 class="card-subtitle mb-2 text-muted" style="display: inline;margin-left: 50%">点击量：</h6>
+                        <h6 class="card-subtitle mb-2 text-muted" style="display: inline;margin-left: 40%">点击量：</h6>
                         <h6 style="display: inline;color: #0d6efd">58489人次</h6>
                         <h5 class="card-title"><b>《地质信息技术导论》</b></h5>
-                        <p class="card-text" style="display: inline">武忠祥</p>
-                        <a href="#" class="btn btn-primary">大咖讲师</a>
+                        <p class="card-text" style="display: inline; font-size: 20px; margin-left:15px"><b>武忠祥</b></p>
+                        <a href="#" class="btn btn-primary" style="background: #F6EBD8; color: #F29542; font-size: 14px; border: none; border-radius:32px; margin-left:10px">大咖讲师</a>
                     </div>
                 </div>
             </div>
@@ -159,17 +159,17 @@
                     <img src="{% static 'img/1.png' %}" class="card-img-top">
                     <button type="button" class="btn btn-secondary btn-sm"
                             style="width: 100px;background: rgba(255,255,255,0.5);z-index: 1000;position: absolute;top: 10px;left: 10px;border: none;color: black">
-                        <b>视频资源</b></button>
+                        <b>试题资源</b></button>
                     {#                    <div style="background-color: red;display: inline">#}
                     {#                        <h6><b style="z-index: 1000;position: absolute;top: 10px;left: 10px">视频资源</b></h6>#}
                     {#                    </div>#}
                     <div class="card-body">
                         <h6 class="card-subtitle mb-2 text-muted" style="display: inline">13分12秒</h6>
-                        <h6 class="card-subtitle mb-2 text-muted" style="display: inline;margin-left: 50%">点击量：</h6>
+                        <h6 class="card-subtitle mb-2 text-muted" style="display: inline;margin-left: 40%">点击量：</h6>
                         <h6 style="display: inline;color: #0d6efd">58489人次</h6>
                         <h5 class="card-title"><b>《地质信息技术导论》</b></h5>
-                        <p class="card-text" style="display: inline">武忠祥</p>
-                        <a href="#" class="btn btn-primary">大咖讲师</a>
+                        <p class="card-text" style="display: inline; font-size: 20px; margin-left:15px"><b>武忠祥</b></p>
+                        <a href="#" class="btn btn-primary" style="background: #F6EBD8; color: #F29542; font-size: 14px; border: none; border-radius:32px; margin-left:10px">大咖讲师</a>
                     </div>
                 </div>
             </div>
@@ -186,11 +186,11 @@
                     {#                    </div>#}
                     <div class="card-body">
                         <h6 class="card-subtitle mb-2 text-muted" style="display: inline">13分12秒</h6>
-                        <h6 class="card-subtitle mb-2 text-muted" style="display: inline;margin-left: 50%">点击量：</h6>
+                        <h6 class="card-subtitle mb-2 text-muted" style="display: inline;margin-left: 40%">点击量：</h6>
                         <h6 style="display: inline;color: #0d6efd">58489人次</h6>
                         <h5 class="card-title"><b>《地质信息技术导论》</b></h5>
-                        <p class="card-text" style="display: inline">武忠祥</p>
-                        <a href="#" class="btn btn-primary">大咖讲师</a>
+                        <p class="card-text" style="display: inline; font-size: 20px; margin-left:15px"><b>武忠祥</b></p>
+                        <a href="#" class="btn btn-primary" style="background: #F6EBD8; color: #F29542; font-size: 14px; border: none; border-radius:32px; margin-left:10px">大咖讲师</a>
                     </div>
                 </div>
             </div>
@@ -199,17 +199,17 @@
                     <img src="{% static 'img/1.png' %}" class="card-img-top">
                     <button type="button" class="btn btn-secondary btn-sm"
                             style="width: 100px;background: rgba(255,255,255,0.5);z-index: 1000;position: absolute;top: 10px;left: 10px;border: none;color: black">
-                        <b>视频资源</b></button>
+                        <b>文档资源</b></button>
                     {#                    <div style="background-color: red;display: inline">#}
                     {#                        <h6><b style="z-index: 1000;position: absolute;top: 10px;left: 10px">视频资源</b></h6>#}
                     {#                    </div>#}
                     <div class="card-body">
                         <h6 class="card-subtitle mb-2 text-muted" style="display: inline">13分12秒</h6>
-                        <h6 class="card-subtitle mb-2 text-muted" style="display: inline;margin-left: 50%">点击量：</h6>
+                        <h6 class="card-subtitle mb-2 text-muted" style="display: inline;margin-left: 40%">点击量：</h6>
                         <h6 style="display: inline;color: #0d6efd">58489人次</h6>
                         <h5 class="card-title"><b>《地质信息技术导论》</b></h5>
-                        <p class="card-text" style="display: inline">武忠祥</p>
-                        <a href="#" class="btn btn-primary">大咖讲师</a>
+                        <p class="card-text" style="display: inline; font-size: 20px; margin-left:15px"><b>武忠祥</b></p>
+                        <a href="#" class="btn btn-primary" style="background: #F6EBD8; color: #F29542; font-size: 14px; border: none; border-radius:32px; margin-left:10px">大咖讲师</a>
                     </div>
                 </div>
             </div>
@@ -218,17 +218,17 @@
                     <img src="{% static 'img/1.png' %}" class="card-img-top">
                     <button type="button" class="btn btn-secondary btn-sm"
                             style="width: 100px;background: rgba(255,255,255,0.5);z-index: 1000;position: absolute;top: 10px;left: 10px;border: none;color: black">
-                        <b>视频资源</b></button>
+                        <b>试题资源</b></button>
                     {#                    <div style="background-color: red;display: inline">#}
                     {#                        <h6><b style="z-index: 1000;position: absolute;top: 10px;left: 10px">视频资源</b></h6>#}
                     {#                    </div>#}
                     <div class="card-body">
                         <h6 class="card-subtitle mb-2 text-muted" style="display: inline">13分12秒</h6>
-                        <h6 class="card-subtitle mb-2 text-muted" style="display: inline;margin-left: 50%">点击量：</h6>
+                        <h6 class="card-subtitle mb-2 text-muted" style="display: inline;margin-left: 40%">点击量：</h6>
                         <h6 style="display: inline;color: #0d6efd">58489人次</h6>
                         <h5 class="card-title"><b>《地质信息技术导论》</b></h5>
-                        <p class="card-text" style="display: inline">武忠祥</p>
-                        <a href="#" class="btn btn-primary">大咖讲师</a>
+                        <p class="card-text" style="display: inline; font-size: 20px; margin-left:15px"><b>武忠祥</b></p>
+                        <a href="#" class="btn btn-primary" style="background: #F6EBD8; color: #F29542; font-size: 14px; border: none; border-radius:32px; margin-left:10px">大咖讲师</a>
                     </div>
                 </div>
             </div>

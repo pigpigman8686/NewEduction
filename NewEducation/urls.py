@@ -25,7 +25,8 @@ from SuperAdmin import views as SuperAdminViews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('teacher/teaching_result', TeacherViews.analyse),
+    path('teacher/teaching_result/', TeacherViews.analyse),
+    path('index/', TeacherViews.index),
     # path('index_zzh/', IndexPageViews.index_zzh),
     # path('index_lsj/', IndexPageViews.index_lsj),
     # path('learning_condition/', LearningConditionViews.portrait),
@@ -34,6 +35,4 @@ urlpatterns = [
     # path('path_plan/', LearningConditionViews.path_plan),
     # path('teaching_data/', TeachingDataViews.catalog),
     # path('teaching_result/', TeachingResultViews.analyse),
-
-
 ]

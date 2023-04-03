@@ -128,7 +128,7 @@
             <div class="col-12">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                    aria-expanded="false" style="color:#165DFF;display: inline;margin-left: 1300px;">
-                    选择课程
+                    选择课程查看课程报告
                 </a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">计算方法</a></li>
@@ -138,7 +138,6 @@
             </div>
         </div>
         <br>
-        {#弹框样式#}
         <style>
             .white_content {
                 display: none;
@@ -146,7 +145,7 @@
                 top: 60%;
                 left: 10%;
                 width: 1200px;
-                height: 150%;
+                height: 165%;
                 padding: 20px;
                 border: 2px solid #F2F3F5;
                 background-color: white;
@@ -154,7 +153,6 @@
                 overflow: auto;
             }
         </style>
-        {#弹框样式#}
         <div id="light" class="white_content">
             <table>
                 <a href="javascript:void(0)" onclick="closeDialog()" style="margin-left: 98%; font-size: larger">×</a>
@@ -162,231 +160,282 @@
                 <hr>
                 <div class="row">
                     <ul style=" list-style-type: none; margin: 0; padding: 0; overflow: hidden; background-color:white;">
-                        <li style="display: block;padding: 8px;background-color: #F2F3F5; float: left; border-right: 1px solid #bbb;">
-                            <a href="#">课程资源</a></li>
-                        <li style="display: block;padding: 8px;background-color: #F2F3F5; float: left; border-right: 1px solid #bbb;">
-                            <a href="#">试题资源</a></li>
-                        <li style="display: block;padding: 8px;background-color: #F2F3F5; float: left; border-right: 1px solid #bbb;">
-                            <a href="#">朋辈互助</a></li>
-                        <li style="display: block;padding: 8px;background-color: #F2F3F5; float: left; border-right: 1px solid #bbb;">
-                            <a href="#">教师辅导</a></li>
+                        <li style="display: block;padding: 8px;background-color: #F2F3F5; float: left; border-right: 1px solid #bbb;"><a href="#">课程资源</a></li>
+                        <li style="display: block;padding: 8px;background-color: #F2F3F5; float: left; border-right: 1px solid #bbb;"><a href="#">试题资源</a></li>
+                        <li style="display: block;padding: 8px;background-color: #F2F3F5; float: left; border-right: 1px solid #bbb;"><a href="#">朋辈互助</a></li>
+                        <li style="display: block;padding: 8px;background-color: #F2F3F5; float: left; border-right: 1px solid #bbb;"><a href="#">教师辅导</a></li>
                     </ul>
-                    <div class="container-fluid"
-                         style="width: auto;margin-top: 20px;margin-left: 20px;margin-right: 20px;">
-                        <div class="row" style="background-color: white">
-                            <div class="row">
-                                <!-- 顶部标题 -->
-                                <div class="row">
-                                    <div class="col-3" style="padding: 10px;">
-                                        <div class="text-center"
-                                             style="width:30px;height:25px;border-radius:5px;background-color: #F2F6FB;display: inline-block;border-radius: 50px">
-                                            <span><</span>
-                                        </div>
-                                        <span><b>2020年05月</b></span>
-                                        <div class="text-center"
-                                             style="width:25px;height:25px;border-radius:5px;background-color: #F2F6FB;display: inline-block;border-radius: 50px">
-                                            <span>></span>
-                                        </div>
-                                        <button type="button" class="btn btn-primary btn-sm"
-                                                style=" width: 80px;height: 30px; margin-left: 20px;background: #F2F6FB;color: black;border: none">
-                                            今天
-                                        </button>
-                                    </div>
-                                    <div class="col-3 offset-6" style="text-align: right;padding: 10px 0;">
-                                        <img src="{% static 'img/icons/日历.svg' %}" width="20px" ; height="20px">
-                                        <h6 style="display: inline;"><b>学习日历</b></h6>
-                                        <span>|</span>
-                                        <img src="{% static 'img/icons/调整.svg' %}" width="20px" ; height="20px">
-                                        <h6 style="display: inline;margin-right: 10px"><b>调整学习计划</b></h6>
-                                    </div>
-                                </div>
-                                <!-- 日历 -->
-                                <div class="row" style="padding: 0 20px 0 20px">
-                                    <div class="col text-center"
-                                         style="border: #c3d3db 1px solid;height: 50px;margin: 0 10px 0 10px">
-                                        <div style="line-height: 50px">
-                                            <h6 style="display: inline"><b>10</b></h6>
-                                            <h6 style="display: inline;color: #969696">周日</h6>
-                                        </div>
-                                    </div>
-                                    <div class="col text-center"
-                                         style="border: #c3d3db 1px solid;height: 50px;margin: 0 10px 0 10px">
-                                        <div style="line-height: 50px">
-                                            <h6 style="display: inline"><b>11</b></h6>
-                                            <h6 style="display: inline;color: #969696">周一</h6>
-                                            <img src="{% static 'img/icons/大拇指.svg' %}">
-                                        </div>
-                                    </div>
-                                    <div class="col text-center"
-                                         style="border: #c3d3db 1px solid;height: 50px;margin: 0 10px 0 10px">
-                                        <div style="line-height: 50px">
-                                            <h6 style="display: inline"><b>12</b></h6>
-                                            <h6 style="display: inline;color: #969696">周二</h6>
-                                        </div>
-                                    </div>
-                                    <div class="col text-center"
-                                         style="border: #c3d3db 1px solid;height: 50px;margin: 0 10px 0 10px">
-                                        <div style="line-height: 50px">
-                                            <h6 style="display: inline"><b>13</b></h6>
-                                            <h6 style="display: inline;color: #969696">周三</h6>
-                                            <img src="{% static 'img/icons/大拇指.svg' %}">
-                                        </div>
-                                    </div>
-                                    <div class="col text-center"
-                                         style="border: blue 1px solid;height: 50px;margin: 0 10px 0 10px">
-                                        <div style="line-height: 50px">
-                                            <div style="display: inline-block;height: 30px;width: 30px;border-radius: 50%;background-color: #165DFF">
-                                                <h6 style="color: white;line-height: 1.8"><b>14</b></h6>
-                                            </div>
-                                            <h6 style="display: inline;color: #165DFF"><b>今天</b></h6>
-                                        </div>
-                                    </div>
-                                    <div class="col text-center"
-                                         style="border: #c3d3db 1px solid;height: 50px;margin: 0 10px 0 10px">
-                                        <div style="line-height: 50px">
-                                            <h6 style="display: inline"><b>15</b></h6>
-                                            <h6 style="display: inline;color: #969696">周五</h6>
-                                        </div>
-                                    </div>
-                                    <div class="col text-center"
-                                         style="border: #c3d3db 1px solid;height: 50px;margin: 0 10px 0 10px">
-                                        <div style="line-height: 50px">
-                                            <h6 style="display: inline"><b>16</b></h6>
-                                            <h6 style="display: inline;color: #969696">周六</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row" style="padding: 10px 20px 10px 20px">
-                                    <div class="col-2">
-                                        <img src="{% static 'img/icons/大拇指.svg' %}">
-                                        <span style="color: #969696">已学完</span>
-                                    </div>
-                                    <div class="col">
-                                        <span style="color: #969696;font-size: 12px;margin-left: 10px;line-height:30px">提示：未学完第二天继续推荐给你</span>
-                                    </div>
-                                </div>
+                    <div class="container-fluid" style="width: auto;margin-top: 80px;margin-left: 20px;margin-right: 20px;">
+        <div class="row" style="background-color: white">
+            <div class="col-12">
+                <!-- 顶部标题 -->
+                <div class="row">
+                    <div class="col-3" style="padding: 10px;">
+                        <div class="text-center"
+                             style="width:30px;height:25px;border-radius:5px;background-color: #ced4da;display: inline-block">
+                            <span><</span>
+                        </div>
+                        <span>2020年05月</span>
+                        <div class="text-center"
+                             style="width:25px;height:25px;border-radius:5px;background-color: #ced4da;display: inline-block">
+                            <span>></span>
+                        </div>
+                        <button type="button" class="btn btn-primary btn-sm">今天</button>
+                    </div>
+                    <div class="col-3 offset-6" style="text-align: right;padding: 10px 0;">
+                        <img src="{% static 'img/icons/calendar-date.svg' %}">
+                        <h6 style="display: inline;"><b>学习日历</b></h6>
+                        <span>|</span>
+                        <img src="{% static 'img/icons/filter-left.svg' %}">
+                        <h6 style="display: inline;margin-right: 10px"><b>调整学习计划</b></h6>
+                    </div>
+                </div>
+                <!-- 日历 -->
+                <div class="row" style="padding: 0 20px 0 20px">
+                    <div class="col text-center" style="border: #ced4da 1px solid;height: 100px;margin: 0 10px 0 10px">
+                        <div style="line-height: 100px">
+                            <h6 style="display: inline"><b>10</b></h6>
+                            <h6 style="display: inline;color: #969696">周日</h6>
+                        </div>
+                    </div>
+                    <div class="col text-center" style="border: #ced4da 1px solid;height: 100px;margin: 0 10px 0 10px">
+                        <div style="line-height: 100px">
+                            <h6 style="display: inline"><b>11</b></h6>
+                            <h6 style="display: inline;color: #969696">周一</h6>
+                            <img src="{% static 'img/icons/hand-thumbs-up.svg' %}">
+                        </div>
+                    </div>
+                    <div class="col text-center" style="border: #ced4da 1px solid;height: 100px;margin: 0 10px 0 10px">
+                        <div style="line-height: 100px">
+                            <h6 style="display: inline"><b>12</b></h6>
+                            <h6 style="display: inline;color: #969696">周二</h6>
+                        </div>
+                    </div>
+                    <div class="col text-center" style="border: #ced4da 1px solid;height: 100px;margin: 0 10px 0 10px">
+                        <div style="line-height: 100px">
+                            <h6 style="display: inline"><b>13</b></h6>
+                            <h6 style="display: inline;color: #969696">周三</h6>
+                            <img src="{% static 'img/icons/hand-thumbs-up.svg' %}">
+                        </div>
+                    </div>
+                    <div class="col text-center" style="border: #ced4da 1px solid;height: 100px;margin: 0 10px 0 10px">
+                        <div style="line-height: 100px">
+                            <div style="display: inline-block;height: 30px;width: 30px;border-radius: 50%;background-color: #165DFF">
+                                <h6 style="color: white;line-height: 1.8"><b>14</b></h6>
+                            </div>
+                            <h6 style="display: inline;color: #165DFF"><b>今天</b></h6>
+                        </div>
+                    </div>
+                    <div class="col text-center" style="border: #ced4da 1px solid;height: 100px;margin: 0 10px 0 10px">
+                        <div style="line-height: 100px">
+                            <h6 style="display: inline"><b>15</b></h6>
+                            <h6 style="display: inline;color: #969696">周五</h6>
+                        </div>
+                    </div>
+                    <div class="col text-center" style="border: #ced4da 1px solid;height: 100px;margin: 0 10px 0 10px">
+                        <div style="line-height: 100px">
+                            <h6 style="display: inline"><b>16</b></h6>
+                            <h6 style="display: inline;color: #969696">周六</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="padding: 10px 20px 10px 20px">
+                    <div class="col-1">
+                        <img src="{% static 'img/icons/hand-thumbs-up.svg' %}">
+                        <span style="color: #969696">已学完</span>
+                    </div>
+                    <div class="col">
+                        <span style="color: #969696">提示：未学完第二天继续推荐给你</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 10px">
+            <!-- 左侧主界面 -->
+            <div class="col-9">
+                <div class="row">
+                    <div class="col-4 text-center">
+                        <div class="spinner-border"
+                             style="display: inline-block;height: 20px;width: 20px;background-color: white;border-radius: 50%;">
+                            {#                            <img src="{% static 'img/icons/' %}"#}
+                        </div>
+                        <h6 style="display: inline;color: #1F63FF;"><b>65分钟完成今日计划（学习进度：2/4）</b></h6>
+                    </div>
+                    <div class="col-3 offset-5 text-end">
+                        <button type="button" class="btn btn-primary btn-sm" style="border-radius: 30px">
+                            <img src="{% static 'img/icons/play.svg' %}">
+                            开始学习
+                        </button>
+                    </div>
+                </div>
+                <div class="row" style="border-radius: 10px;background-color: white;margin-top: 10px">
+                    <div class="col-2" style="margin: 30px 20px 20px 20px">
+                        <img src="{% static 'img/1.png' %}" class="img-thumbnail" style="width: 300px;height: 100px">
+                    </div>
+                    <div class="col-7" style="margin: 30px 0 20px 0;line-height: 100px">
+                        <h6 style="color: #969696;line-height: 1.8"><b>《地质信息技术导论》</b></h6>
+                        <h6 style="color: #101010;line-height: 1.8"><b>4.1 液流阻力和水头损失分类及计算公式.mp4</b></h6>
+                        <h6 style="color: #969696;line-height: 1.8">13分12秒</h6>
+                    </div>
+                    <div class="col" style="margin-top: 100px;margin-right: 30px;text-align: end;">
+                        <button type="button" class="btn btn-outline-primary btn-sm">
+                            <img src="{% static 'img/icons/play.svg' %}">
+                            播放
+                        </button>
+                    </div>
+                </div>
+                <div class="row" style="border-radius: 10px;background-color: white;margin-top: 10px">
+                    <div class="col-2" style="margin: 30px 20px 20px 20px">
+                        <img src="{% static 'img/1.png' %}" class="img-thumbnail" style="width: 300px;height: 100px">
+                    </div>
+                    <div class="col-7" style="margin: 30px 0 20px 0;line-height: 100px">
+                        <h6 style="color: #969696;line-height: 1.8"><b>《地质信息技术导论》</b></h6>
+                        <h6 style="color: #101010;line-height: 1.8"><b>4.1 液流阻力和水头损失分类及计算公式.mp4</b></h6>
+                        <h6 style="color: #969696;line-height: 1.8">13分12秒</h6>
+                    </div>
+                    <div class="col" style="margin-top: 100px;margin-right: 30px;text-align: end;">
+                        <button type="button" class="btn btn-outline-primary btn-sm">
+                            <img src="{% static 'img/icons/play.svg' %}">
+                            播放
+                        </button>
+                    </div>
+                </div>
+                <div class="row" style="border-radius: 10px;background-color: white;margin-top: 10px">
+                    <div class="col-2" style="margin: 30px 20px 20px 20px">
+                        <img src="{% static 'img/1.png' %}" class="img-thumbnail" style="width: 300px;height: 100px">
+                    </div>
+                    <div class="col-7" style="margin: 30px 0 20px 0;line-height: 100px">
+                        <h6 style="color: #969696;line-height: 1.8"><b>《地质信息技术导论》</b></h6>
+                        <h6 style="color: #101010;line-height: 1.8"><b>4.1 液流阻力和水头损失分类及计算公式.mp4</b></h6>
+                        <h6 style="color: #969696;line-height: 1.8">13分12秒</h6>
+                    </div>
+                    <div class="col" style="margin-top: 100px;margin-right: 30px;text-align: end;">
+                        <button type="button" class="btn btn-outline-primary btn-sm">
+                            <img src="{% static 'img/icons/play.svg' %}">
+                            播放
+                        </button>
+                    </div>
+                </div>
+                <div class="row" style="border-radius: 10px;background-color: white;margin-top: 10px">
+                    <div class="col-2" style="margin: 30px 20px 20px 20px">
+                        <img src="{% static 'img/1.png' %}" class="img-thumbnail" style="width: 300px;height: 100px">
+                    </div>
+                    <div class="col-7" style="margin: 30px 0 20px 0;line-height: 100px">
+                        <h6 style="color: #969696;line-height: 1.8"><b>《地质信息技术导论》</b></h6>
+                        <h6 style="color: #101010;line-height: 1.8"><b>4.1 液流阻力和水头损失分类及计算公式.mp4</b></h6>
+                        <h6 style="color: #969696;line-height: 1.8">13分12秒</h6>
+                    </div>
+                    <div class="col" style="margin-top: 100px;margin-right: 30px;text-align: end;">
+                        <button type="button" class="btn btn-outline-primary btn-sm">
+                            <img src="{% static 'img/icons/play.svg' %}">
+                            播放
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- 右侧链接 -->
+            <div class="col-3" style="padding-left: 20px">
+                <!-- 朋辈互助 -->
+                <div class="row" style="border-radius: 10px;background-color: white">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col">
+                                <h5>朋辈互助</h5>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 5px">
+                            <div class="col-2" style="padding-left: 20px;padding-top: 5px">
+                                <img src="{% static 'img/1.png' %}" style="border-radius: 50%" width="40" height="40">
+                            </div>
+                            <div class="col-6">
+                                <h6><b>王悟名</b></h6>
+                                <span>信息工程学院大数据</span>
+                            </div>
+                            <div class="col-4" style="padding-top: 8px">
+                                <button type="button" class="btn btn-outline-primary btn-sm">联系Ta</button>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 5px">
+                            <div class="col-2" style="padding-left: 20px;padding-top: 5px">
+                                <img src="{% static 'img/1.png' %}" style="border-radius: 50%" width="40" height="40">
+                            </div>
+                            <div class="col-6">
+                                <h6><b>王悟名</b></h6>
+                                <span>信息工程学院大数据</span>
+                            </div>
+                            <div class="col-4" style="padding-top: 8px">
+                                <button type="button" class="btn btn-outline-primary btn-sm">联系Ta</button>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 5px">
+                            <div class="col-2" style="padding-left: 20px;padding-top: 5px">
+                                <img src="{% static 'img/1.png' %}" style="border-radius: 50%" width="40" height="40">
+                            </div>
+                            <div class="col-6">
+                                <h6><b>王悟名</b></h6>
+                                <span>信息工程学院大数据</span>
+                            </div>
+                            <div class="col-4" style="padding-top: 8px">
+                                <button type="button" class="btn btn-outline-primary btn-sm">联系Ta</button>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 5px">
+                            <div class="col-2" style="padding-left: 20px;padding-top: 5px">
+                                <img src="{% static 'img/1.png' %}" style="border-radius: 50%" width="40" height="40">
+                            </div>
+                            <div class="col-6">
+                                <h6><b>王悟名</b></h6>
+                                <span>信息工程学院大数据</span>
+                            </div>
+                            <div class="col-4" style="padding-top: 8px">
+                                <button type="button" class="btn btn-outline-primary btn-sm">联系Ta</button>
                             </div>
                         </div>
                         <div class="row" style="margin-top: 10px">
-                            <!-- 左侧主界面 -->
-                            <div class="row">
-                                <div class="row">
-                                    <div class="col-4 text-center">
-                                        <div class="spinner-border"
-                                             style="display: inline-block;height: 20px;width: 20px;background-color: white;border-radius: 50%;">
-                                            {#                            <img src="{% static 'img/icons/' %}"#}
-                                        </div>
-                                        <h6 style="display: inline;color: #1F63FF;">
-                                            <b>65分钟完成今日计划（学习进度：2/4）</b></h6>
-                                    </div>
-                                    <div class="col-3 offset-5 text-end">
-                                        <button type="button" class="btn btn-primary btn-sm"
-                                                style="border-radius: 30px">
-                                            <img src="{% static 'img/icons/开始（白色）.svg' %}" width="16px" ;
-                                                 height="16px">
-                                            开始学习
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="row" style="border-radius: 10px;background-color: white;margin-top: 10px">
-                                    <div class="col-2" style="margin: 30px 20px 20px 20px">
-                                        <img src="{% static 'img/1.png' %}" class="img-thumbnail"
-                                             style="width: 300px;height: 100px">
-                                    </div>
-                                    <div class="col-7" style="margin: 30px 0 20px 0;line-height: 100px">
-                                        <h6 style="color: #969696;line-height: 1.8"><b>《地质信息技术导论》</b></h6>
-                                        <h6 style="color: #101010;line-height: 1.8"><b>4.1
-                                            液流阻力和水头损失分类及计算公式.mp4</b></h6>
-                                        <h6 style="color: #969696;line-height: 1.8">13分12秒</h6>
-                                    </div>
-                                    <div class="col" style="margin-top: 100px;margin-right: 30px;text-align: end;">
-                                        <button type="button" class="btn btn-outline-primary btn-sm">
-                                            <img src="{% static 'img/icons/开始（蓝色）.svg' %}" width="16px" ;
-                                                 height="16px">
-                                            播放
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="row" style="border-radius: 10px;background-color: white;margin-top: 10px">
-                                    <div class="col-2" style="margin: 30px 20px 20px 20px">
-                                        <img src="{% static 'img/1.png' %}" class="img-thumbnail"
-                                             style="width: 300px;height: 100px">
-                                    </div>
-                                    <div class="col-7" style="margin: 30px 0 20px 0;line-height: 100px">
-                                        <h6 style="color: #969696;line-height: 1.8"><b>《地质信息技术导论》</b></h6>
-                                        <h6 style="color: #101010;line-height: 1.8"><b>4.1
-                                            液流阻力和水头损失分类及计算公式.mp4</b></h6>
-                                        <h6 style="color: #969696;line-height: 1.8">13分12秒</h6>
-                                    </div>
-                                    <div class="col" style="margin-top: 100px;margin-right: 30px;text-align: end;">
-                                        <button type="button" class="btn btn-outline-primary btn-sm">
-                                            <img src="{% static 'img/icons/开始（蓝色）.svg' %}" width="16px" ;
-                                                 height="16px">
-                                            播放
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="row" style="border-radius: 10px;background-color: white;margin-top: 10px">
-                                    <div class="col-2" style="margin: 30px 20px 20px 20px">
-                                        <img src="{% static 'img/1.png' %}" class="img-thumbnail"
-                                             style="width: 300px;height: 100px">
-                                    </div>
-                                    <div class="col-7" style="margin: 30px 0 20px 0;line-height: 100px">
-                                        <h6 style="color: #969696;line-height: 1.8"><b>《地质信息技术导论》</b></h6>
-                                        <h6 style="color: #101010;line-height: 1.8"><b>4.1
-                                            液流阻力和水头损失分类及计算公式.mp4</b></h6>
-                                        <h6 style="color: #969696;line-height: 1.8">13分12秒</h6>
-                                    </div>
-                                    <div class="col" style="margin-top: 100px;margin-right: 30px;text-align: end;">
-                                        <button type="button" class="btn btn-outline-primary btn-sm">
-                                            <img src="{% static 'img/icons/开始（蓝色）.svg' %}" width="16px" ;
-                                                 height="16px">
-                                            播放
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="row" style="border-radius: 10px;background-color: white;margin-top: 10px">
-                                    <div class="col-2" style="margin: 30px 20px 20px 20px">
-                                        <img src="{% static 'img/1.png' %}" class="img-thumbnail"
-                                             style="width: 300px;height: 100px">
-                                    </div>
-                                    <div class="col-7" style="margin: 30px 0 20px 0;line-height: 100px">
-                                        <h6 style="color: #969696;line-height: 1.8"><b>《地质信息技术导论》</b></h6>
-                                        <h6 style="color: #101010;line-height: 1.8"><b>4.1
-                                            液流阻力和水头损失分类及计算公式.mp4</b></h6>
-                                        <h6 style="color: #969696;line-height: 1.8">13分12秒</h6>
-                                    </div>
-                                    <div class="col" style="margin-top: 100px;margin-right: 30px;text-align: end;">
-                                        <button type="button" class="btn btn-outline-primary btn-sm">
-                                            <img src="{% static 'img/icons/开始（蓝色）.svg' %}" width="16px" ;
-                                                 height="16px">
-                                            播放
-                                        </button>
-                                    </div>
-                                </div>
+                            <div class="col-5 text-end">
+                                <button type="button" class="btn btn-outline-secondary btn-sm" disabled>上一页</button>
+                            </div>
+                            <div class="col-2 text-center">
+                                <span style="color: #0d6efd">1</span><span>/5</span>
+                            </div>
+                            <div class="col-5 text-start">
+                                <button type="button" class="btn btn-outline-secondary btn-sm" style="text-align: left">
+                                    下一页
+                                </button>
                             </div>
                         </div>
                     </div>
+                    <div class="col-8">
+                                <h5 style="display: inline"><b>大家都在看</b></h5>
+                                <img src="{% static 'img/icons/bar-chart.svg' %}">
+                            </div>
+                            <div class="col-4 text-end">
+                                <a style="color: #0d6efd">我也要看</a>
+                            </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                    <script>
-                        var myChart = echarts.init(document.getElementById('main12'));
+    <script>
+        var myChart = echarts.init(document.getElementById('main12'));
 
-                        option = {
-                            xAxis: {
-                                data: ['A', 'B', 'C', 'D', 'E']
-                            },
-                            yAxis: {},
-                            series: [
-                                {
-                                    data: [10, 22, 28, 23, 19],
-                                    type: 'line',
-                                    smooth: true
-                                }
-                            ]
-                        };
+        option = {
+            xAxis: {
+                data: ['A', 'B', 'C', 'D', 'E']
+            },
+            yAxis: {},
+            series: [
+                {
+                    data: [10, 22, 28, 23, 19],
+                    type: 'line',
+                    smooth: true
+                }
+            ]
+        };
 
-                        myChart.setOption(option);
-                    </script>
+        myChart.setOption(option);
+    </script>
 
                 </div>
             </table>
@@ -949,18 +998,8 @@
                         option1 = {
                             title: [
                                 {
-                                    text: "学习内容偏好",
+                                    text: "学习时长分析",
                                     y: '2%'
-                                },
-                                {
-                                    text: '（近7日）',
-                                    x: '23%',
-                                    y: '3%',
-                                    textStyle:
-                                        {
-                                            color: '#969696',
-                                            fontSize: 14
-                                        }
                                 },
                                 {
                                     text: "  超同课程          学生",
@@ -1205,16 +1244,6 @@
                                     y: '2%'
                                 },
                                 {
-                                    text: '（近7日）',
-                                    x: '23%',
-                                    y: '3%',
-                                    textStyle:
-                                        {
-                                            color: '#969696',
-                                            fontSize: 14
-                                        }
-                                },
-                                {
                                     text: "  超同课程          学生",
                                     x: "50%",
                                     y: '2%',
@@ -1346,7 +1375,7 @@
                         option3 = {
                             title: [
                                 {
-                                    text: "上课出勤情况",
+                                    text: "上课出勤情况（近七日）",
                                     y: '2%'
                                 },
                                 {
@@ -2709,5 +2738,4 @@
                         myChart1.setOption(option10);
                         myChart2.setOption(option11);
                     </script>
-                </div>
-            </div>{% endblock %}
+                </div>{% endblock %}
